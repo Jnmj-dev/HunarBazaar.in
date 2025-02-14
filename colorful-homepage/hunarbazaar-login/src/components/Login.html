@@ -1,0 +1,53 @@
+<!-- filepath: /hunarbazaar-login/hunarbazaar-login/src/components/Login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HunarBazaar - Login</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Side -->
+        <div class="left-side">
+            <img src="https://source.unsplash.com/200x200/?craft,tools,workshop" alt="Illustration">
+            <h2>HunarBazaar</h2>
+            <p>Connecting skilled workers with people in need of services.</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right-side">
+            <h2>Welcome Back</h2>
+            <p>Login to your account</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <a href="#" class="forgot-password">Forgot password?</a>
+
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+
+            <button class="google-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg">
+                Sign in with Google
+            </button>
+
+            <p class="signup-text">New to HunarBazaar? <a href="/signup">Create Account</a></p>
+        </div>
+    </div>
+
+    <script src="../../scripts/login.js"></script>
+
+</body>
+</html>

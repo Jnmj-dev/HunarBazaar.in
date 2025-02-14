@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    height: 500px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Side */
+.left-side {
+    width: 50%;
+    background: #cfe8dc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.left-side img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.left-side h2 {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.left-side p {
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Right Side */
+.right-side {
+    width: 50%;
+    padding: 40px;
+}
+
+.right-side h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.right-side p {
+    text-align: center;
+    color: #666;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 14px;
+    color: #27ae60;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #27ae60;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #219150;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+}
+
+.google-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+}
+
+.signup-text a {
+    color: #27ae60;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .left-side {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+}
