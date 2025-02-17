@@ -5,11 +5,29 @@ import Footer from "../components/Footer";
 
 function Marketplace() {
   const [bids, setBids] = useState({});
+  const [bidAmount, setBidAmount] = useState({});
 
-  const handleBidSubmit = (jobId, amount) => {
+  const handleInputChange = (jobId, value) => {
+    setBidAmount((prev) => ({
+      ...prev,
+      [jobId]: value,
+    }));
+  };
+
+  const handleBidSubmit = (jobId) => {
+    if (!bidAmount[jobId] || isNaN(bidAmount[jobId]) || bidAmount[jobId] <= 0) {
+      alert("Please enter a valid bid amount.");
+      return;
+    }
+
     setBids((prevBids) => ({
       ...prevBids,
-      [jobId]: [...(prevBids[jobId] || []), amount],
+      [jobId]: [...(prevBids[jobId] || []), `₹${bidAmount[jobId]}`],
+    }));
+
+    setBidAmount((prev) => ({
+      ...prev,
+      [jobId]: "",
     }));
   };
 
@@ -33,19 +51,26 @@ function Marketplace() {
                 <h3 className="font-semibold">Place a Bid</h3>
                 <input
                   type="number"
+                  value={bidAmount[job.id] || ""}
                   placeholder="Your Bid Amount (₹)"
                   className="w-full p-2 border rounded mt-2"
-                  onChange={(e) => handleBidSubmit(job.id, e.target.value)}
+                  onChange={(e) => handleInputChange(job.id, e.target.value)}
                 />
+                <button
+                  onClick={() => handleBidSubmit(job.id)}
+                  className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg w-full"
+                >
+                  Submit Bid
+                </button>
               </div>
 
               {/* Display Bids */}
-              {bids[job.id] && (
+              {bids[job.id] && bids[job.id].length > 0 && (
                 <div className="mt-4">
                   <h3 className="font-semibold">Bids Received:</h3>
                   <ul className="text-blue-500">
                     {bids[job.id].map((bid, index) => (
-                      <li key={index}>₹{bid}</li>
+                      <li key={index}>{bid}</li>
                     ))}
                   </ul>
                 </div>
