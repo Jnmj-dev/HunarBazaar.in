@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { jobs } from "../data";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function PostJob() {
   const [title, setTitle] = useState("");
@@ -86,6 +87,7 @@ function PostJob() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

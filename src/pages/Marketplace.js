@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { jobs } from "../data";
 
 function Marketplace() {
@@ -20,6 +21,7 @@ function Marketplace() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { workers } from "../data";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function WorkerProfile() {
   return (
@@ -20,6 +21,7 @@ function WorkerProfile() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
