@@ -1,12 +1,23 @@
+import { workers } from "../data";
+
 function WorkerProfile() {
-    return (
-      <div className="text-center p-10">
-        <h1 className="text-3xl font-bold">Worker Profiles</h1>
-        <p className="mt-2 text-lg">View details of skilled workers.</p>
-        {/* Later, we'll add mock worker profiles here */}
+  return (
+    <div className="p-10">
+      <h1 className="text-3xl font-bold text-center">Worker Profiles</h1>
+      <div className="grid md:grid-cols-3 gap-6 mt-6">
+        {workers.map((worker) => (
+          <div key={worker.id} className="border p-4 rounded-lg shadow-lg">
+            <img src={worker.image} alt={worker.name} className="w-full h-40 object-cover rounded-lg" />
+            <h2 className="text-xl font-bold mt-2">{worker.name}</h2>
+            <p className="text-gray-600">{worker.profession}</p>
+            <p>Experience: {worker.experience}</p>
+            <p>Location: {worker.location}</p>
+            <p>⭐ {worker.rating}</p>
+          </div>
+        ))}
       </div>
-    );
-  }
-  
-  export default WorkerProfile;
-  
+    </div>
+  );
+}
+
+export default WorkerProfile;
