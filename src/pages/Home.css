@@ -166,10 +166,43 @@ body {
   margin: 0; /* Remove default margin */
 }
 
+/* Thin Line */
+.thin-line {
+  width: 80%;
+  height: 2px; /* Thicker line */
+  background-color: #e0e0e0; /* Light gray line */
+  margin: 2rem auto; /* Center the line */
+}
+
+/* Why Use HunarBazaar? */
+.why-use-hunarbazaar {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Very light blue background */
+  border-radius: 12px; /* Rounded corners */
+}
+
+.why-use-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333; /* Dark text color */
+}
+
+.why-use-description {
+  font-size: 1rem;
+  color: #666; /* Gray text color */
+  max-width: 800px;
+  margin: 0 auto; /* Center the text */
+}
+
 /* Testimonials */
 .testimonials {
   margin: 2rem 0;
   text-align: center;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Very light blue background */
+  border-radius: 12px; /* Rounded corners */
 }
 
 .testimonials-title {
@@ -193,6 +226,9 @@ body {
 .call-to-action {
   text-align: center;
   margin: 2rem 0;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Very light blue background */
+  border-radius: 12px; /* Rounded corners */
 }
 
 .call-to-action-title {
@@ -212,4 +248,25 @@ body {
 
 .call-to-action-button:hover {
   background-color: #1e4bb5; /* Darker blue on hover */
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Very light blue background */
+  border-radius: 12px; /* Rounded corners */
+  font-size: 1rem;
+  color: #666; /* Gray text color */
+}
+
+.contact-section a {
+  color: #2563eb; /* Blue link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #1e4bb5; /* Darker blue on hover */
 }
