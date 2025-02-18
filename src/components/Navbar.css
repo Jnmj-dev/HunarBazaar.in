@@ -1,5 +1,3 @@
-/* Navbar.css */
-
 /* Navbar Container */
 .navbar {
   background-color: white;
@@ -53,7 +51,7 @@
 /* Center navigation links */
 .navbar-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem; /* Increased spacing between buttons */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -63,11 +61,15 @@
 .navbar-link {
   color: black;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  padding: 0.5rem 1rem; /* Added padding for better click area */
+  border-radius: 0.25rem; /* Rounded corners */
+  background-color: rgba(173, 216, 230, 0.3); /* Light blue background */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-link:hover {
-  opacity: 0.7;
+  background-color: rgba(173, 216, 230, 0.5); /* Slightly darker light blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Authentication Buttons (Login & Sign Up) - Moves to Right-most */

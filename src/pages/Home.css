@@ -1,16 +1,23 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background */
+}
+
 /* Hero Section */
 .home-hero {
   width: 100%;
-  padding: 1rem 0; /* Padding for spacing */
+  padding: 2rem 0;
   text-align: center;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: #ffffff; /* White background */
 }
 
 .home-hero-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: black; /* Black text color */
-  margin: 0; /* Remove default margin */
+  color: #333; /* Dark text color */
+  margin: 0;
 }
 
 /* Search Bars Container */
@@ -18,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem; /* Increased space between search bars */
+  gap: 1.5rem; /* Space between search bars */
   margin: 2rem 0;
 }
 
@@ -26,10 +33,10 @@
 .home-search-bar {
   display: flex;
   align-items: center;
-  border: 2px solid #333; /* Darker and bolder border */
+  border: 2px solid #e0e0e0; /* Light border */
   border-radius: 8px; /* Rounded corners */
-  padding: 0.75rem; /* Increased padding */
-  width: 450px; /* Slightly wider */
+  padding: 0.75rem;
+  width: 400px; /* Fixed width */
   background-color: white; /* White background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -38,8 +45,8 @@
   border: none;
   outline: none;
   flex: 1;
-  padding: 0 0.75rem; /* Increased padding */
-  font-size: 1.1rem; /* Larger text */
+  padding: 0 0.75rem;
+  font-size: 1rem; /* Normal text size */
 }
 
 .search-icon {
@@ -49,7 +56,7 @@
 
 /* Location Search Bar */
 .location-search-bar {
-  width: 350px; /* Slightly wider */
+  width: 350px; /* Slightly smaller width */
 }
 
 /* Featured Services */
@@ -81,6 +88,12 @@
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.featured-service:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .featured-service-icon {
@@ -102,6 +115,7 @@
   font-size: 1rem; /* Normal text size */
   color: #666; /* Gray text color */
   text-align: center;
+  margin: 0; /* Remove default margin */
 }
 
 /* Category Cards */
@@ -142,6 +156,13 @@
   font-size: 1.5rem; /* Bigger text */
   font-weight: bold; /* Bolder text */
   color: #333; /* Dark text color */
+  margin: 0.5rem 0; /* Spacing */
+}
+
+.category-description {
+  font-size: 1rem; /* Normal text size */
+  color: #666; /* Gray text color */
+  text-align: center;
   margin: 0; /* Remove default margin */
 }
 
@@ -154,15 +175,18 @@
 .testimonials-title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #333; /* Dark text color */
 }
 
 .testimonial {
   margin: 1rem 0;
   font-style: italic;
+  color: #666; /* Gray text color */
 }
 
 .testimonial-author {
   font-weight: bold;
+  color: #333; /* Dark text color */
 }
 
 /* Call to Action */
@@ -174,17 +198,18 @@
 .call-to-action-title {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #333; /* Dark text color */
 }
 
 .call-to-action-button {
   padding: 0.75rem 1.5rem;
-  background-color: #2563eb;
-  color: white;
-  border-radius: 4px;
+  background-color: #2563eb; /* Blue background */
+  color: white; /* White text */
+  border-radius: 4px; /* Rounded corners */
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .call-to-action-button:hover {
-  background-color: #1e4bb5;
+  background-color: #1e4bb5; /* Darker blue on hover */
 }
