@@ -13,10 +13,16 @@ function Home() {
           <h1 className="home-hero-title">Find Skilled Workers Easily!</h1>
         </div>
 
-        {/* Search Bar */}
-        <div className="home-search-bar">
-          <input type="text" placeholder="Search for services..." />
-          <div className="search-icon">🔍</div>
+        {/* Search Bars */}
+        <div className="search-bars-container">
+          <div className="home-search-bar">
+            <input type="text" placeholder="Search for services..." />
+            <div className="search-icon">🔍</div>
+          </div>
+          <div className="home-search-bar location-search-bar">
+            <input type="text" placeholder="Choose your location" />
+            <div className="search-icon">📍</div>
+          </div>
         </div>
 
         {/* Category Cards */}

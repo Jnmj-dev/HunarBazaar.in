@@ -13,24 +13,39 @@
   margin: 0; /* Remove default margin */
 }
 
-/* Search Bar */
-.home-search-bar {
+/* Search Bars Container */
+.search-bars-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem; /* Space between search bars */
   margin: 2rem 0;
 }
 
-.home-search-bar input {
-  padding: 0.5rem 1rem;
+/* Search Bar */
+.home-search-bar {
+  display: flex;
+  align-items: center;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 300px;
+  padding: 0.5rem;
+  width: 400px; /* Elongated width */
+}
+
+.home-search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0 0.5rem;
 }
 
 .search-icon {
-  margin-left: 0.5rem;
   cursor: pointer;
+}
+
+/* Location Search Bar */
+.location-search-bar {
+  width: 300px; /* Slightly smaller width for location bar */
 }
 
 /* Category Cards */
