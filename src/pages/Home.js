@@ -8,26 +8,18 @@ function Home() {
     <>
       <Navbar />
       <div className="home-container">
-        <div
-          className="home-hero"
-          style={{ backgroundImage: "url('https://source.unsplash.com/1600x900/?work,construction')" }}
-        >
-          <div className="home-hero-overlay">
-            <h1 className="home-hero-title">Find Skilled Workers Easily!</h1>
-            <p className="home-hero-subtitle">Post a job and get local professionals to help you.</p>
-            <div>
-              <Link to="/post-job" className="home-hero-button">
-                Post a Job Now
-              </Link>
-            </div>
-          </div>
+        {/* Hero Section */}
+        <div className="home-hero">
+          <h1 className="home-hero-title">Find Skilled Workers Easily!</h1>
         </div>
 
+        {/* Search Bar */}
         <div className="home-search-bar">
           <input type="text" placeholder="Search for services..." />
           <div className="search-icon">🔍</div>
         </div>
 
+        {/* Category Cards */}
         <div className="category-cards">
           <div className="category-card">
             <img src="https://source.unsplash.com/50x50/?plumbing" alt="Plumbing" className="category-icon" />
@@ -43,6 +35,7 @@ function Home() {
           </div>
         </div>
 
+        {/* Featured Services */}
         <div className="featured-services">
           <h2 className="featured-services-title">Featured Services</h2>
           <div className="featured-services-list">
@@ -61,6 +54,7 @@ function Home() {
           </div>
         </div>
 
+        {/* Testimonials */}
         <div className="testimonials">
           <h2 className="testimonials-title">What Our Clients Say</h2>
           <div className="testimonial">
@@ -73,6 +67,7 @@ function Home() {
           </div>
         </div>
 
+        {/* Call to Action */}
         <div className="call-to-action">
           <h2 className="call-to-action-title">Ready to Get Started?</h2>
           <Link to="/post-job" className="call-to-action-button">
