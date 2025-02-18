@@ -1,56 +1,110 @@
-/* Navbar.css */
-
 /* Navbar Container */
 .navbar {
-    background-color: #3b82f6; /* Equivalent to bg-blue-500 in Tailwind */
-    padding: 1rem; /* Equivalent to p-4 in Tailwind */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md in Tailwind */
-  }
-  
-  /* Container for Navbar Content */
-  .navbar-container {
-    max-width: 1200px; /* Equivalent to container in Tailwind */
-    margin: 0 auto; /* Center the container */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Brand/Logo Styling */
-  .navbar-brand {
-    color: white;
-    font-size: 1.5rem; /* Equivalent to text-2xl in Tailwind */
-    font-weight: bold; /* Equivalent to font-bold in Tailwind */
-    text-decoration: none;
-  }
-  
-  /* Navigation Links Container */
-  .navbar-links {
-    display: flex;
-    gap: 1rem; /* Equivalent to space-x-4 in Tailwind */
-  }
-  
-  /* Individual Link Styling */
-  .navbar-link {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-  }
-  
-  .navbar-link:hover {
-    opacity: 0.8;
-  }
-  
-  /* Special Button Styling (e.g., Post a Job) */
-  .navbar-button {
-    background-color: rgba(255, 255, 255, 0.2); /* Equivalent to bg-white/20 in Tailwind */
-    color: white;
-    padding: 0.25rem 1rem; /* Equivalent to px-4 py-1 in Tailwind */
-    border-radius: 0.25rem; /* Equivalent to rounded in Tailwind */
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .navbar-button:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Slightly lighter on hover */
-  }
+  background-color: white;
+  padding: 1rem;
+  box-shadow: none; /* Removed default shadow */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05); /* Creates a soft modern line effect */
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Moves the bottom line slightly down */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Moves line 5px down */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.1); /* Light gray line */
+}
+
+/* Navbar Inner Container */
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand/Logo Styling - Moves HunarBazaar to Left-most */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 20px; /* Moves it to left-most */
+}
+
+/* Styling for "Hunar" */
+.brand-hunar {
+  color: #000305; /* Navy Blue */
+}
+
+/* Styling for "Bazaar" */
+.brand-bazaar {
+  color: #FF7300; /* Orange */
+}
+
+/* Center navigation links */
+.navbar-links {
+  display: flex;
+  gap: 2rem; /* Increased spacing between buttons */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Individual Link Styling */
+.navbar-link {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Added padding for better click area */
+  border-radius: 0.25rem; /* Rounded corners */
+  background-color: rgba(173, 216, 230, 0.3); /* Light blue background */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-link:hover {
+  background-color: rgba(173, 216, 230, 0.5); /* Slightly darker light blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Authentication Buttons (Login & Sign Up) - Moves to Right-most */
+.navbar-auth {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 20px; /* Moves it to right-most */
+}
+
+/* Button Styling for Login and Sign Up */
+.navbar-button {
+  background-color: rgba(0, 0, 255, 0.2); /* Light Blue Background */
+  color: black;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.navbar-button:hover {
+  background-color: rgba(0, 0, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Login & Sign Up Specific Colors */
+.navbar-button.login {
+  background-color: rgba(0, 0, 255, 0.25);
+}
+
+.navbar-button.signup {
+  background-color: rgba(255, 165, 0, 0.35); /* Orange for sign-up */
+}
+
+.navbar-button.login:hover,
+.navbar-button.signup:hover {
+  background-color: rgba(0, 0, 255, 0.45);
+}
