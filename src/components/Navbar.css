@@ -1,0 +1,56 @@
+/* Navbar.css */
+
+/* Navbar Container */
+.navbar {
+    background-color: #3b82f6; /* Equivalent to bg-blue-500 in Tailwind */
+    padding: 1rem; /* Equivalent to p-4 in Tailwind */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md in Tailwind */
+  }
+  
+  /* Container for Navbar Content */
+  .navbar-container {
+    max-width: 1200px; /* Equivalent to container in Tailwind */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Brand/Logo Styling */
+  .navbar-brand {
+    color: white;
+    font-size: 1.5rem; /* Equivalent to text-2xl in Tailwind */
+    font-weight: bold; /* Equivalent to font-bold in Tailwind */
+    text-decoration: none;
+  }
+  
+  /* Navigation Links Container */
+  .navbar-links {
+    display: flex;
+    gap: 1rem; /* Equivalent to space-x-4 in Tailwind */
+  }
+  
+  /* Individual Link Styling */
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+    opacity: 0.8;
+  }
+  
+  /* Special Button Styling (e.g., Post a Job) */
+  .navbar-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Equivalent to bg-white/20 in Tailwind */
+    color: white;
+    padding: 0.25rem 1rem; /* Equivalent to px-4 py-1 in Tailwind */
+    border-radius: 0.25rem; /* Equivalent to rounded in Tailwind */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly lighter on hover */
+  }
