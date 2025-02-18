@@ -28,16 +28,28 @@ function Home() {
         {/* Category Cards */}
         <div className="category-cards">
           <div className="category-card">
-            <img src="https://source.unsplash.com/50x50/?plumbing" alt="Plumbing" className="category-icon" />
-            <p>Plumbing</p>
+            <img
+              src="https://thumbs.dreamstime.com/z/happy-plumber-16841982.jpg"
+              alt="Plumbing"
+              className="category-icon"
+            />
+            <p className="category-title">Plumbing</p>
           </div>
           <div className="category-card">
-            <img src="https://source.unsplash.com/50x50/?electrician" alt="Electrician" className="category-icon" />
-            <p>Electrician</p>
+            <img
+              src="https://thumbs.dreamstime.com/z/engineer-man-working-breaker-fuse-box-electrician-electrical-service-panel-cabinet-electric-meter-switch-board-wiring-192362152.jpg?w=360"
+              alt="Electrician"
+              className="category-icon"
+            />
+            <p className="category-title">Electrician</p>
           </div>
           <div className="category-card">
-            <img src="https://source.unsplash.com/50x50/?carpentry" alt="Carpentry" className="category-icon" />
-            <p>Carpentry</p>
+            <img
+              src="https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-carpenter-clipart-work-in-hand-carpenter-cartoon-vector-png-image_6809448.png"
+              alt="Carpentry"
+              className="category-icon"
+            />
+            <p className="category-title">Carpentry</p>
           </div>
         </div>
 

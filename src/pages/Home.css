@@ -57,12 +57,32 @@
 
 .category-card {
   text-align: center;
+  width: 30%; /* Adjust width for better spacing */
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
 }
 
 .category-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 150px; /* Increased image size */
+  height: 150px; /* Increased image size */
+  border-radius: 12px; /* Slightly rounded corners */
+  object-fit: cover; /* Ensure images fit properly */
+  margin-bottom: 1rem; /* Space between image and text */
+}
+
+.category-title {
+  font-size: 1.5rem; /* Bigger text */
+  font-weight: bold; /* Bolder text */
+  color: #333; /* Dark text color */
+  margin: 0; /* Remove default margin */
 }
 
 /* Featured Services */
