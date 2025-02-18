@@ -5,52 +5,56 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>React App</title>
+    <!-- Add Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+      /* Custom styles */
       body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 20px;
+        @apply bg-gray-100;
       }
-      .btn-container {
-        margin-top: 20px;
+
+      .navbar {
+        @apply bg-blue-600 p-4 shadow-md;
       }
-      .btn {
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 5px;
-        transition: background 0.3s ease-in-out;
+
+      .navbar a {
+        @apply text-white hover:text-gray-200 transition duration-200;
       }
-      .login-btn {
-        background-color: #007bff; /* Blue */
+
+      .navbar a.bg-white {
+        @apply text-blue-600 px-4 py-2 rounded-lg;
       }
-      .login-btn:hover {
-        background-color: #0056b3;
+
+      .home-hero {
+        @apply relative w-full h-screen flex flex-col items-center justify-center text-center bg-cover bg-center;
       }
-      .signup-btn {
-        background-color: #28a745; /* Green */
-      }
-      .signup-btn:hover {
-        background-color: #1e7e34;
+
+      .home-hero-title {
+        @apply text-5xl font-bold text-white;
       }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <a href="#" class="hover:text-gray-200">Home</a>
+        <a href="#" class="hover:text-gray-200">About</a>
+        <a href="#" class="bg-white">Get Started</a>
+      </nav>
 
-    <!-- Login & Signup Buttons -->
-    <div class="btn-container">
-      <button class="btn login-btn">Login</button>
-      <button class="btn signup-btn">Sign Up</button>
+      <!-- Hero Section -->
+      <div class="home-hero" style="background-image: url('your-background-image.jpg');">
+        <h1 class="home-hero-title">Find Skilled Workers Easily</h1>
+      </div>
     </div>
   </body>
 </html>
