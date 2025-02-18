@@ -64,6 +64,46 @@
   color: #333; /* Dark text color */
 }
 
+.featured-services-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.featured-service {
+  width: 30%;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: white; /* White background */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+}
+
+.featured-service-icon {
+  width: 150px; /* Increased image size */
+  height: 150px; /* Increased image size */
+  border-radius: 12px; /* Slightly rounded corners */
+  object-fit: cover; /* Ensure images fit properly */
+  margin-bottom: 1rem; /* Space between image and text */
+}
+
+.featured-service h3 {
+  font-size: 1.5rem; /* Bigger text */
+  font-weight: bold; /* Bolder text */
+  color: #333; /* Dark text color */
+  margin: 0.5rem 0; /* Spacing */
+}
+
+.featured-service p {
+  font-size: 1rem; /* Normal text size */
+  color: #666; /* Gray text color */
+  text-align: center;
+}
+
 /* Category Cards */
 .category-cards {
   display: flex;
@@ -103,22 +143,6 @@
   font-weight: bold; /* Bolder text */
   color: #333; /* Dark text color */
   margin: 0; /* Remove default margin */
-}
-
-/* Featured Services List */
-.featured-services-list {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1.5rem;
-}
-
-.featured-service {
-  width: 30%;
-  padding: 1.5rem;
-  border: 1px solid #e0e0e0; /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: white; /* White background */
 }
 
 /* Testimonials */

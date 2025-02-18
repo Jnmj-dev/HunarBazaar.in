@@ -30,14 +30,29 @@ function Home() {
           <h2 className="featured-services-title">Featured Services</h2>
           <div className="featured-services-list">
             <div className="featured-service">
+              <img
+                src="https://cdn1.vectorstock.com/i/1000x1000/20/40/cleaning-service-concept-cheerful-cartoon-vector-25532040.jpg"
+                alt="Home Cleaning"
+                className="featured-service-icon"
+              />
               <h3>Home Cleaning</h3>
               <p>Professional home cleaning services to keep your house spotless.</p>
             </div>
             <div className="featured-service">
+              <img
+                src="https://c8.alamy.com/compfr/fw3dnr/illustration-cartoon-jardinier-fw3dnr.jpg"
+                alt="Gardening"
+                className="featured-service-icon"
+              />
               <h3>Gardening</h3>
               <p>Expert gardening services to maintain your beautiful garden.</p>
             </div>
             <div className="featured-service">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/015/412/180/non_2x/painter-man-painting-house-wall-with-roller-brush-worker-guy-using-paint-roller-and-paint-cans-decorator-job-interior-renovation-service-flat-character-illustration-vector.jpg"
+                alt="Painting"
+                className="featured-service-icon"
+              />
               <h3>Painting</h3>
               <p>High-quality painting services for your home or office.</p>
             </div>
@@ -53,6 +68,9 @@ function Home() {
               className="category-icon"
             />
             <p className="category-title">Plumbing</p>
+            <p className="category-description">
+              Reliable plumbing services to fix leaks, install fixtures, and maintain your water systems.
+            </p>
           </div>
           <div className="category-card">
             <img
@@ -61,6 +79,9 @@ function Home() {
               className="category-icon"
             />
             <p className="category-title">Electrician</p>
+            <p className="category-description">
+              Expert electrical services for wiring, repairs, and installations to keep your home safe and powered.
+            </p>
           </div>
           <div className="category-card">
             <img
@@ -69,6 +90,9 @@ function Home() {
               className="category-icon"
             />
             <p className="category-title">Carpentry</p>
+            <p className="category-description">
+              Skilled carpentry services for custom furniture, repairs, and home renovations.
+            </p>
           </div>
         </div>
 
