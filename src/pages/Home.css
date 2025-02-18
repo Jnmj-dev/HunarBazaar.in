@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem; /* Space between search bars */
+  gap: 1.5rem; /* Increased space between search bars */
   margin: 2rem 0;
 }
 
@@ -26,26 +26,42 @@
 .home-search-bar {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.5rem;
-  width: 400px; /* Elongated width */
+  border: 2px solid #333; /* Darker and bolder border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0.75rem; /* Increased padding */
+  width: 450px; /* Slightly wider */
+  background-color: white; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .home-search-bar input {
   border: none;
   outline: none;
   flex: 1;
-  padding: 0 0.5rem;
+  padding: 0 0.75rem; /* Increased padding */
+  font-size: 1.1rem; /* Larger text */
 }
 
 .search-icon {
   cursor: pointer;
+  font-size: 1.2rem; /* Larger icon */
 }
 
 /* Location Search Bar */
 .location-search-bar {
-  width: 300px; /* Slightly smaller width for location bar */
+  width: 350px; /* Slightly wider */
+}
+
+/* Featured Services */
+.featured-services {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.featured-services-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333; /* Dark text color */
 }
 
 /* Category Cards */
@@ -63,6 +79,10 @@
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
 }
 
 .category-card:hover {
@@ -85,27 +105,20 @@
   margin: 0; /* Remove default margin */
 }
 
-/* Featured Services */
-.featured-services {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.featured-services-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
+/* Featured Services List */
 .featured-services-list {
   display: flex;
   justify-content: space-around;
+  margin-top: 1.5rem;
 }
 
 .featured-service {
   width: 30%;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: white; /* White background */
 }
 
 /* Testimonials */

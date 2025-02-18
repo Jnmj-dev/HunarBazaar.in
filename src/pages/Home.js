@@ -25,6 +25,25 @@ function Home() {
           </div>
         </div>
 
+        {/* Featured Services */}
+        <div className="featured-services">
+          <h2 className="featured-services-title">Featured Services</h2>
+          <div className="featured-services-list">
+            <div className="featured-service">
+              <h3>Home Cleaning</h3>
+              <p>Professional home cleaning services to keep your house spotless.</p>
+            </div>
+            <div className="featured-service">
+              <h3>Gardening</h3>
+              <p>Expert gardening services to maintain your beautiful garden.</p>
+            </div>
+            <div className="featured-service">
+              <h3>Painting</h3>
+              <p>High-quality painting services for your home or office.</p>
+            </div>
+          </div>
+        </div>
+
         {/* Category Cards */}
         <div className="category-cards">
           <div className="category-card">
@@ -50,25 +69,6 @@ function Home() {
               className="category-icon"
             />
             <p className="category-title">Carpentry</p>
-          </div>
-        </div>
-
-        {/* Featured Services */}
-        <div className="featured-services">
-          <h2 className="featured-services-title">Featured Services</h2>
-          <div className="featured-services-list">
-            <div className="featured-service">
-              <h3>Home Cleaning</h3>
-              <p>Professional home cleaning services to keep your house spotless.</p>
-            </div>
-            <div className="featured-service">
-              <h3>Gardening</h3>
-              <p>Expert gardening services to maintain your beautiful garden.</p>
-            </div>
-            <div className="featured-service">
-              <h3>Painting</h3>
-              <p>High-quality painting services for your home or office.</p>
-            </div>
           </div>
         </div>
 
