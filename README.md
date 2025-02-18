@@ -25,7 +25,7 @@ HunarBazaar is a platform that connects skilled local workers—such as carpente
 ## 📌 Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone (https://github.com/Jnmj-dev/HunarBazaar.in)
+   git clone https://github.com/Jnmj-dev/HunarBazaar.in
    ```
 2. Navigate to the project folder:
    ```sh
