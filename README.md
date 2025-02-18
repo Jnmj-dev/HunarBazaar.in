@@ -1,7 +1,7 @@
 # HunarBazaar - Connecting Local Skilled Workers
 
 ## 🚀 About the Project
-HunarBazaar is a platform that connects skilled local workers—such as carpenters, masons, electricians, halwais, and more—with people who need their services. It functions like a freelancing marketplace but specifically caters to small-scale workers, helping them gain online visibility and secure jobs easily. The platform bridges the gap between skilled professionals and customers, offering an easy-to-use interface and seamless hiring process. By leveraging technology, HunarBazaar aims to modernize the local service sector and provide better income opportunities for workers.
+HunarBazaar is a platform that connects skilled local workers—such as carpenters, masons, electricians, halwais, and more—with people who need their services. It functions like a freelancing marketplace but specifically caters to small-scale workers, helping them gain online visibility and secure jobs easily. The platform bridges the gap between skilled local workers and customers, offering an easy-to-use interface and seamless hiring process. It features a bidding system and a job marketplace with rating system for worker profiles (future updates). By leveraging technology, HunarBazaar aims to modernize the local service sector and provide better income opportunities for workers.
 
 ## 🌟 Features
 ### For Customers
@@ -25,7 +25,7 @@ HunarBazaar is a platform that connects skilled local workers—such as carpente
 ## 📌 Installation & Setup
 1. Clone the repository:
    ```sh
-   git clone (https://github.com/Jnmj-dev/HunarBazaar.in)
+   git clone https://github.com/Jnmj-dev/HunarBazaar.in
    ```
 2. Navigate to the project folder:
    ```sh
