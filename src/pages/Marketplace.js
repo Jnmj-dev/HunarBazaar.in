@@ -31,6 +31,13 @@ function Marketplace() {
     }));
   };
 
+  // Define job images based on job ID
+  const jobImages = {
+    1: "https://www.shutterstock.com/image-vector/broken-cable-vector-isolated-on-600nw-2393358947.jpg",
+    2: "https://content.instructables.com/F9V/W31Y/HJKBYGNO/F9VW31YHJKBYGNO.jpg?auto=webp",
+    3: "https://www.plumbtimesc.com/wp-content/uploads/2020/01/Signs-That-You-Have-a-Water-Leak-in-Your-Bathroom.jpg",
+  };
+
   return (
     <>
       <Navbar />
@@ -39,8 +46,7 @@ function Marketplace() {
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {jobs.map((job) => (
             <div key={job.id} className="border p-4 rounded-lg shadow-lg flex justify-between items-center">
-              {/* Job Details (Left Side) */}
-              <div className="flex-1">
+              <div>
                 <h2 className="text-xl font-bold">{job.title}</h2>
                 <p className="text-gray-600">{job.description}</p>
                 <p className="text-green-600 font-semibold">Budget: {job.budget}</p>
@@ -79,14 +85,14 @@ function Marketplace() {
                 )}
               </div>
 
-              {/* Image Placeholder (Right Side) */}
-              <div className="ml-4">
-                <img 
-                  src="https://via.placeholder.com/150" 
-                  alt="Job Image" 
-                  className="w-32 h-32 object-cover rounded-lg"
+              {/* Job Image */}
+              {jobImages[job.id] && (
+                <img
+                  src={jobImages[job.id]}
+                  alt={`Job ${job.id}`}
+                  className="w-50 h-48 object-cover border-2 border-black rounded-lg ml-4"
                 />
-              </div>
+              )}
             </div>
           ))}
         </div>
