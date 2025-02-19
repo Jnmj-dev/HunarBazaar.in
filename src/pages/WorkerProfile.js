@@ -36,35 +36,33 @@ function WorkerProfile() {
   return (
     <>
       <Navbar />
-      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", padding: "30px 5px" }}>
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", padding: "40px 10px" }}>
         <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>Worker Profiles</h1>
-        <div 
-          style={{ 
-            display: "grid", 
-            gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", // Slightly smaller width
-            gap: "10px", // Reduced space between boxes
-            marginTop: "15px" 
-          }}
-        >
+        <div style={{ 
+          display: "flex", 
+          justifyContent: "center", 
+          gap: "30px",  // 👈 VERY MINIMAL SPACE BETWEEN BOXES
+          marginTop: "20px",
+          flexWrap: "wrap"
+        }}>
           {workers.map((worker) => (
             <Link 
               to={`/worker/${worker.id}`} 
               key={worker.id} 
               style={{ 
                 border: "2px solid #ccc", 
-                padding: "15px", // Reduced padding to shrink box size
+                padding: "20px", 
                 borderRadius: "10px", 
                 backgroundColor: "white", 
-                boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.1)", 
+                boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.1)", 
                 textAlign: "center", 
                 textDecoration: "none", 
                 color: "black", 
                 display: "flex", 
                 flexDirection: "column", 
                 alignItems: "center", 
-                height: "440px", // Reduced height by ~10px
-                maxWidth: "94%", // Slightly smaller width
-                margin: "auto"
+                width: "350px", // 👈 Updated width
+                height: "450px" 
               }}
             >
               <img 
@@ -72,12 +70,13 @@ function WorkerProfile() {
                 alt={worker.name} 
                 style={{ 
                   width: "100%", 
-                  height: "240px", // Reduced image height slightly
+                  height: "250px", 
                   objectFit: "cover", 
                   borderRadius: "10px" 
+                 
                 }} 
               />
-              <h2 style={{ fontSize: "1.4rem", fontWeight: "bold", marginTop: "8px" }}>{worker.name}</h2>
+              <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", marginTop: "10px" }}>{worker.name}</h2>
               <p style={{ color: "gray", fontStyle: "italic" }}>{worker.profession}</p>
               <p>Experience: {worker.experience}</p>
               <p>Location: {worker.location}</p>

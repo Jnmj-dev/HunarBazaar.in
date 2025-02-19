@@ -3,6 +3,23 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #f9f9f9; /* Light background */
+  padding-top: 80px; /* Adjusted to match navbar height */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 80px; /* Explicitly set navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Add padding for navbar content */
 }
 
 /* Home Container */
@@ -17,35 +34,34 @@ body {
   width: 100%;
   padding: 2rem 0;
   text-align: center;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
 }
 
 .home-hero-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333; /* Dark text color */
+  color: #333;
   margin: 0;
 }
 
-/* Search Bars Container */
+/* Search Bars */
 .search-bars-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem; /* Space between search bars */
+  gap: 1.5rem;
   margin: 2rem 0;
 }
 
-/* Search Bar */
 .home-search-bar {
   display: flex;
   align-items: center;
-  border: 2px solid #e0e0e0; /* Light border */
-  border-radius: 8px; /* Rounded corners */
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
   padding: 0.75rem;
-  width: 400px; /* Fixed width */
-  background-color: white; /* White background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-search-bar input {
@@ -53,17 +69,16 @@ body {
   outline: none;
   flex: 1;
   padding: 0 0.75rem;
-  font-size: 1rem; /* Normal text size */
+  font-size: 1rem;
 }
 
 .search-icon {
   cursor: pointer;
-  font-size: 1.2rem; /* Larger icon */
+  font-size: 1.2rem;
 }
 
-/* Location Search Bar */
 .location-search-bar {
-  width: 350px; /* Slightly smaller width */
+  width: 350px;
 }
 
 /* Featured Services */
@@ -75,114 +90,114 @@ body {
 .featured-services-title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333; /* Dark text color */
+  color: #333;
 }
 
 .featured-services-list {
   display: flex;
-  justify-content: center; /* Centers the boxes horizontally */
-  gap: 10px; /* Space between boxes */
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: nowrap;
   margin-top: 1.5rem;
 }
 
 .featured-service {
-  width: 20%; /* Reduced width */
-  padding: 1rem; /* Reduced padding */
-  border: 1px solid #e0e0e0; /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: white; /* White background */
+  width: 20%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .featured-service:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .featured-service-icon {
-  width: 100px; /* Reduced image size */
-  height: 100px; /* Reduced image size */
-  border-radius: 12px; /* Slightly rounded corners */
-  object-fit: cover; /* Ensure images fit properly */
-  margin-bottom: 0.75rem; /* Reduced space */
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
 }
 
 .featured-service h3 {
-  font-size: 1.25rem; /* Smaller text */
-  font-weight: bold; /* Bolder text */
-  color: #333; /* Dark text color */
-  margin: 0.25rem 0; /* Reduced spacing */
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.25rem 0;
 }
 
 .featured-service p {
-  font-size: 0.875rem; /* Smaller text */
-  color: #666; /* Gray text color */
+  font-size: 0.875rem;
+  color: #666;
   text-align: center;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 /* Category Cards */
 .category-cards {
   display: flex;
-  justify-content: center; /* Centers the boxes horizontally */
-  gap: 10px; /* Space between boxes */
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: nowrap;
   margin: 2rem 0;
 }
 
 .category-card {
-  width: 20%; /* Same width as featured-service */
-  padding: 1rem; /* Same padding as featured-service */
-  border: 1px solid #e0e0e0; /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: white; /* White background */
+  width: 20%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .category-icon {
-  width: 100px; /* Same size as featured-service-icon */
-  height: 100px; /* Same size as featured-service-icon */
-  border-radius: 12px; /* Slightly rounded corners */
-  object-fit: cover; /* Ensure images fit properly */
-  margin-bottom: 0.75rem; /* Same spacing as featured-service-icon */
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
 }
 
 .category-title {
-  font-size: 1.25rem; /* Same size as featured-service h3 */
-  font-weight: bold; /* Bolder text */
-  color: #333; /* Dark text color */
-  margin: 0.25rem 0; /* Same spacing as featured-service h3 */
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.25rem 0;
 }
 
 .category-description {
-  font-size: 0.875rem; /* Same size as featured-service p */
-  color: #666; /* Gray text color */
+  font-size: 0.875rem;
+  color: #666;
   text-align: center;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 /* Thin Line */
 .thin-line {
   width: 80%;
-  height: 2px; /* Thicker line */
-  background-color: #e0e0e0; /* Light gray line */
-  margin: 2rem auto; /* Center the line */
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 2rem auto;
 }
 
 /* Why Use HunarBazaar? */
@@ -190,21 +205,21 @@ body {
   text-align: center;
   margin: 2rem 0;
   padding: 2rem;
-  background-color: #e6f7ff; /* Very light blue background */
-  border-radius: 12px; /* Rounded corners */
+  background-color: #e6f7ff;
+  border-radius: 12px;
 }
 
 .why-use-title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333; /* Dark text color */
+  color: #333;
 }
 
 .why-use-description {
   font-size: 1rem;
-  color: #666; /* Gray text color */
+  color: #666;
   max-width: 800px;
-  margin: 0 auto; /* Center the text */
+  margin: 0 auto;
 }
 
 /* Testimonials */
@@ -212,25 +227,25 @@ body {
   margin: 2rem 0;
   text-align: center;
   padding: 2rem;
-  background-color: #e6f7ff; /* Very light blue background */
-  border-radius: 12px; /* Rounded corners */
+  background-color: #e6f7ff;
+  border-radius: 12px;
 }
 
 .testimonials-title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333; /* Dark text color */
+  color: #333;
 }
 
 .testimonial {
   margin: 1rem 0;
   font-style: italic;
-  color: #666; /* Gray text color */
+  color: #666;
 }
 
 .testimonial-author {
   font-weight: bold;
-  color: #333; /* Dark text color */
+  color: #333;
 }
 
 /* Call to Action */
@@ -238,53 +253,197 @@ body {
   text-align: center;
   margin: 2rem 0;
   padding: 2rem;
-  background-color: #e6f7ff; /* Very light blue background */
-  border-radius: 12px; /* Rounded corners */
+  background-color: #e6f7ff;
+  border-radius: 12px;
 }
 
 .call-to-action-title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333; /* Dark text color */
+  color: #333;
 }
 
 .call-to-action-button {
   padding: 0.75rem 1.5rem;
-  background-color: #2563eb; /* Blue background */
-  color: white; /* White text */
-  border-radius: 4px; /* Rounded corners */
+  background-color: #2563eb;
+  color: white;
+  border-radius: 4px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .call-to-action-button:hover {
-  background-color: #1e4bb5; /* Darker blue on hover */
+  background-color: #1e4bb5;
 }
 
-/* Contact Section */
-.contact-section {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #007bff;
+  color: #fff;
+  padding: 15px;
   text-align: center;
-  margin: 2rem 0;
-  padding: 2rem;
-  background-color: #e6f7ff; /* Very light blue background */
-  border-radius: 12px; /* Rounded corners */
-  font-size: 1rem;
-  color: #666; /* Gray text color */
 }
 
-.contact-section a {
-  color: #2563eb; /* Blue link color */
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #0056b3;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+nav a:hover {
+  background: #003f7f;
+  border-radius: 5px;
+}
+
+/* Sections */
+.section {
+  padding: 20px;
+  margin: 20px 0;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.button:hover {
+  background: #218838;
+}
+
+/* Layout Adjustments */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-item {
+  flex: 1;
+  margin: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #17181c;
+  color: white;
+  padding: 3rem 1rem;
+  margin-top: 5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: #bdc3c7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.contact-section a:hover {
-  color: #1e4bb5; /* Darker blue on hover */
+.footer-links a:hover {
+  color: #1abc9c;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #000000;
+  color: #bdc3c7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
 }/* Base styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background-color: #f9f9f9; /* Light background */
+  padding-top: 80px; /* Adjusted to match navbar height */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 80px; /* Explicitly set navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Add padding for navbar content */
 }
 
 /* Home Container */
@@ -299,226 +458,142 @@ body {
   width: 100%;
   padding: 2rem 0;
   text-align: center;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
 }
 
 .home-hero-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333; /* Dark text color */
+  color: #333;
   margin: 0;
 }
-
-/* Search Bars Container */
-.search-bars-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem; /* Space between search bars */
-  margin: 2rem 0;
-}
-
-/* Featured Services */
-.featured-services {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.featured-services-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #333; /* Dark text color */
-}
-
-.featured-services-list {
-  display: flex;
-  justify-content: center; /* Centers the boxes horizontally */
-  gap: 80px; /* Increased space between boxes to 20px (approx. 2cm) */
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
-  margin-top: 1.5rem;
-}
-
-.featured-service {
-  width: 20%; /* Reduced width */
-  padding: 1rem; /* Reduced padding */
-  border: 1px solid #e0e0e0; /* Light border */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: white; /* White background */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-.featured-service:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
-
-/* Category Cards */
-.category-cards {
-  display: flex;
-  justify-content: center; /* Centers the boxes horizontally */
-  gap: 80px; /* Increased space between boxes to match featured-services */
-  flex-wrap: nowrap; /* Prevents wrapping to the next line */
-  margin: 2rem 0;
-}
-/* Base styles */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f9f9f9; /* Light background */
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #333; /* Dark background */
-  color: white; /* White text */
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 2rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #1e90ff; /* Light blue hover effect */
-}
-
-.footer-contact {
-  font-size: 1rem;
-}
-
-.footer-contact a {
-  color: #1e90ff;
-  text-decoration: none;
-}
-
-.footer-contact a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-links {
-    margin-top: 1rem;
-    flex-direction: column;
-  }
-}
+/* Call to Action - Remove background color and make it transparent */
 .call-to-action {
   text-align: center;
-  padding: 40px 20px;
-  background: transparent !important; /* Makes it blend with the website */
-  box-shadow: none; /* Removes any shadow effect */
-  border: none; /* Ensures no borders */
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: transparent; /* Remove background color */
+  border-radius: 12px;
 }
 
 .call-to-action-title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
 .call-to-action-button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 18px;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
   color: white;
-  background-color: #007bff; /* Keeps the button blue */
-  border-radius: 5px;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .call-to-action-button:hover {
-  background-color: #0056b3;
+  background-color: #1e4bb5;
 }
-/* Stretching the background to full width */
-.why-use-hunarbazaar, .testimonials {
-  background-color: blue; /* Change background to blue */
-  width: 100vw; /* Full viewport width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 40px 20px; /* Adjust padding for spacing */
-  color: white; /* Ensures text is readable */
+
+/* Why Use HunarBazaar? - Stretch background to full width */
+.why-use-hunarbazaar {
   text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Sky blue background */
+  border-radius: 0; /* Remove border radius for full stretch */
+  width: 100%; /* Stretch to full width */
+  margin-left: calc(-50vw + 50%); /* Center and stretch to edges */
+  margin-right: calc(-50vw + 50%); /* Center and stretch to edges */
 }
 
-/* Adjust heading styles */
-.why-use-title, .testimonials-title {
-  color: white;
+.why-use-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-/* Ensuring readability */
-.why-use-description, .testimonial p {
-  color: rgb(0, 0, 0);
+.why-use-description {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
 }
-/* Stretching the background to full width and matching button color */
-.why-use-hunarbazaar, .testimonials {
-  background-color: #709ef3;
-; /* Replace with exact button color if different */
-  width: 100vw; /* Full viewport width */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 40px 20px; /* Adjust padding for spacing */
-  color: rgb(0, 0, 0); /* Ensures text is readable */
+
+/* Testimonials - Stretch background to full width */
+.testimonials {
   text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #e6f7ff; /* Sky blue background */
+  border-radius: 0; /* Remove border radius for full stretch */
+  width: 100%; /* Stretch to full width */
+  margin-left: calc(-50vw + 50%); /* Center and stretch to edges */
+  margin-right: calc(-50vw + 50%); /* Center and stretch to edges */
 }
 
-/* Adjust heading styles */
-.why-use-title, .testimonials-title {
-  color: rgb(0, 0, 0);
+.testimonials-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-/* Ensuring readability */
-.why-use-description, .testimonial p {
-  color: rgb(0, 0, 0);
+.testimonial {
+  margin: 1rem 0;
+  font-style: italic;
+  color: #666;
 }
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white; /* Adjust as needed */
-  z-index: 1000; /* Ensures it stays above other content */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+
+.testimonial-author {
+  font-weight: bold;
+  color: #333;
 }
-body {
-  padding-top: 60px; /* Adjust based on the navbar's height */
+/* Why Use HunarBazaar? - Stretch background to full width */
+.why-use-hunarbazaar {
+  text-align: center;
+  padding: 2rem 0; /* Adjust padding as needed */
+  background-color: #e6f7ff; /* Light blue background */
+  width: 100vw; /* Stretch to full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center and stretch to edges */
+  margin-right: calc(-50vw + 50%); /* Center and stretch to edges */
+}
+
+.why-use-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.why-use-description {
+  font-size: 1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Testimonials - Stretch background to full width */
+.testimonials {
+  text-align: center;
+  padding: 2rem 0; /* Adjust padding as needed */
+  background-color: #e6f7ff; /* Light blue background */
+  width: 100vw; /* Stretch to full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center and stretch to edges */
+  margin-right: calc(-50vw + 50%); /* Center and stretch to edges */
+}
+
+.testimonials-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.testimonial {
+  margin: 1rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #333;
 }

@@ -94,25 +94,24 @@ function Home() {
               Skilled carpentry services for custom furniture, repairs, and home renovations.
             </p>
           </div>
-        </div>
+        </div> 
 
-        {/* Thin Line */}
-        <div className="thin-line"></div>
-
-        {/* Call to Action (Moved above "Why Use HunarBazaar?") */}
-        <div className="call-to-action">
+ {/* Call to Action */}
+ <div className="call-to-action">
           <h2 className="call-to-action-title">Ready to Get Started?</h2>
           <Link to="/post-job" className="call-to-action-button">
             Post a Job Now
           </Link>
+
         </div>
+
 
         {/* Thin Line */}
         <div className="thin-line"></div>
 
         {/* Why Use HunarBazaar? */}
         <div className="why-use-hunarbazaar">
-          <h2 className="why-use-title">Why Use HunarBazaar?</h2>
+          <h2 className="why-use-title">Why Choose HunarBazaar?</h2>
           <p className="why-use-description">
             HunarBazaar is your go-to platform for connecting with skilled local workers like carpenters, electricians, plumbers, and more. With features like worker profiles, instant booking, location-based search, and secure payments, we make it easy to find and hire trusted professionals. Whether you need home repairs, renovations, or specialized services, HunarBazaar ensures quality, convenience, and transparency every step of the way.
           </p>
@@ -133,12 +132,9 @@ function Home() {
             <p className="testimonial-author">- Jane Smith</p>
           </div>
         </div>
-      </div>
 
-      {/* Footer */}
-      <footer className="footer">
-        <p>© 2025 HunarBazaar. All Rights Reserved. Contact us at <a href="mailto:sample@example.com">sample@example.com</a></p>
-      </footer>
+      </div>
+      <Footer />
     </>
   );
 }
