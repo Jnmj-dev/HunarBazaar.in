@@ -99,6 +99,17 @@ function Home() {
         {/* Thin Line */}
         <div className="thin-line"></div>
 
+        {/* Call to Action (Moved above "Why Use HunarBazaar?") */}
+        <div className="call-to-action">
+          <h2 className="call-to-action-title">Ready to Get Started?</h2>
+          <Link to="/post-job" className="call-to-action-button">
+            Post a Job Now
+          </Link>
+        </div>
+
+        {/* Thin Line */}
+        <div className="thin-line"></div>
+
         {/* Why Use HunarBazaar? */}
         <div className="why-use-hunarbazaar">
           <h2 className="why-use-title">Why Use HunarBazaar?</h2>
@@ -122,27 +133,12 @@ function Home() {
             <p className="testimonial-author">- Jane Smith</p>
           </div>
         </div>
-
-        {/* Thin Line */}
-        <div className="thin-line"></div>
-
-        {/* Call to Action */}
-        <div className="call-to-action">
-          <h2 className="call-to-action-title">Ready to Get Started?</h2>
-          <Link to="/post-job" className="call-to-action-button">
-            Post a Job Now
-          </Link>
-        </div>
-
-        {/* Thin Line */}
-        <div className="thin-line"></div>
-
-        {/* Contact Section */}
-        <div className="contact-section">
-          <p>Contact us at <a href="mailto:sample@example.com">sample@example.com</a></p>
-        </div>
       </div>
-      <Footer />
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© 2025 HunarBazaar. All Rights Reserved. Contact us at <a href="mailto:sample@example.com">sample@example.com</a></p>
+      </footer>
     </>
   );
 }
