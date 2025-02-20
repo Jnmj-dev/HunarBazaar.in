@@ -6,7 +6,7 @@ function Footer() {
         <div className="footer-section">
           <h2>About</h2>
           <ul className="footer-links">
-            <li><a href="/about">About</a></li>
+            <li><a href="/about">About Us</a></li>
             <li><a href="/team">Team</a></li>
           </ul>
         </div>
@@ -22,7 +22,6 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Social Media Section */}
         <div className="footer-section">
           <h2>Social Media</h2>
           <ul className="footer-links">

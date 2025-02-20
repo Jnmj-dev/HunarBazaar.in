@@ -596,4 +596,30 @@ body {
 .testimonial-author {
   font-weight: bold;
   color: #333;
+}/* Remove or modify hover effects for featured services */
+.featured-service:hover {
+  transform: none; /* Remove transform */
+  box-shadow: none; /* Remove box shadow */
+  background-color: white; /* Keep background color the same */
+  color: #333; /* Keep text color the same */
+}
+
+/* Remove or modify hover effects for category cards */
+.category-card:hover {
+  transform: none; /* Remove transform */
+  box-shadow: none; /* Remove box shadow */
+  background-color: white; /* Keep background color the same */
+  color: #333; /* Keep text color the same */
+}
+
+/* Remove or modify hover effects for navigation links */
+nav a:hover {
+  background-color: inherit; /* Keep background color the same */
+  color: inherit; /* Keep text color the same */
+}
+
+/* Remove or modify hover effects for buttons */
+.button:hover {
+  background-color: #28a745; /* Keep the same background color */
+  color: white; /* Keep the same text color */
 }
