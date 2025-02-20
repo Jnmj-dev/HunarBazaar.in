@@ -22,6 +22,7 @@ function Footer() {
           </ul>
         </div>
 
+        {/* Social Media Section */}
         <div className="footer-section">
           <h2>Social Media</h2>
           <ul className="footer-links">
@@ -30,11 +31,19 @@ function Footer() {
             <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </div>
+
+
+        {/* Contact Info - Moved to Right Side */}
+    
+<div className="footer-section contact-section">
+<p>For queries contact : sample@gmail.com</p>
+</div>
+
       </div>
 
-      {/* Footer Bottom */}
+      {/* Footer Bottom */} 
       <div className="footer-bottom">
-        <p>© 2025 HunarBazaar. All Rights Reserved. For queries contact: sample@gmail.com</p>
+        <p>© 2025 HunarBazaar. All Rights Reserved.</p>
       </div>
     </footer>
   );
