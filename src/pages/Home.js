@@ -1,9 +1,99 @@
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import './Home.css'; // Import the CSS file
+import "./Home.css";
 
 function Home() {
+  const [currentIndexSliding, setCurrentIndexSliding] = useState(0);
+  const [currentIndexStationary, setCurrentIndexStationary] = useState(0);
+
+  // Array of featured services for the sliding section
+  const slidingServices = [
+    {
+      title: "Home Cleaning",
+      description: "Professional home cleaning services to keep your house spotless.",
+      image: "https://cdn1.vectorstock.com/i/1000x1000/20/40/cleaning-service-concept-cheerful-cartoon-vector-25532040.jpg",
+    },
+    {
+      title: "Gardening",
+      description: "Expert gardening services to maintain your beautiful garden.",
+      image: "https://c8.alamy.com/compfr/fw3dnr/illustration-cartoon-jardinier-fw3dnr.jpg",
+    },
+    {
+      title: "Painting",
+      description: "High-quality painting services for your home or office.",
+      image: "https://static.vecteezy.com/system/resources/previews/015/412/180/non_2x/painter-man-painting-house-wall-with-roller-brush-worker-guy-using-paint-roller-and-paint-cans-decorator-job-interior-renovation-service-flat-character-illustration-vector.jpg",
+    },
+    {
+      title: "Masonry Work",
+      description: "Skilled masonry services for wall repairs, tiling, and construction needs.",
+      image: "https://www.shutterstock.com/image-illustration/cute-mason-building-wall-community-600w-2049564860.jpg",
+    },
+    {
+      title: "Auto Repair",
+      description: "Professional mechanic services for car and bike repairs, maintenance, and check-ups.",
+      image: "https://www.shutterstock.com/image-vector/auto-mechanic-opened-hood-repairs-600nw-2094192772.jpg",
+    },
+  ];
+
+  // Array of stationary services for the static section
+  const stationaryServices = [
+    {
+      title: "Plumbing",
+      description: "Reliable plumbing services to fix leaks, install fixtures, and maintain your water systems.",
+      image: "https://thumbs.dreamstime.com/z/happy-plumber-16841982.jpg",
+    },
+    {
+      title: "Electrician",
+      description: "Expert electrical services for wiring, repairs, and installations to keep your home safe and powered.",
+      image: "https://thumbs.dreamstime.com/z/engineer-man-working-breaker-fuse-box-electrician-electrical-service-panel-cabinet-electric-meter-switch-board-wiring-192362152.jpg?w=360",
+    },
+    {
+      title: "Carpentry",
+      description: "Skilled carpentry services for custom furniture, repairs, and home renovations.",
+      image: "https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-carpenter-clipart-work-in-hand-carpenter-cartoon-vector-png-image_6809448.png",
+    },
+    {
+      title: "Nursing Care",
+      description: "Compassionate nursing services for home care, medical assistance, and patient support.",
+      image: "https://img.pikbest.com/png-images/qiantu/cartoon-nurse-taking-care-of-patients_2520732.png!sw800",
+    },
+    {
+      title: "Culinary Services",
+      description: "Professional chef services for delicious home-cooked meals, events, and special occasions.",
+      image: "https://img.freepik.com/free-vector/restaurant-kitchen-chef-character-cartoon-vector-illustration-chief-cook-worker-people-set-professional-hospitality-service-culinary-staff-apron-with-soup-laddle-cloche-plate-design_107791-24291.jpg",
+    },
+  ];
+
+  // Function to handle sliding to the left (for sliding section)
+  const slideLeftSliding = () => {
+    setCurrentIndexSliding((prevIndex) =>
+      prevIndex === 0 ? slidingServices.length - 3 : prevIndex - 1
+    );
+  };
+
+  // Function to handle sliding to the right (for sliding section)
+  const slideRightSliding = () => {
+    setCurrentIndexSliding((prevIndex) =>
+      prevIndex === slidingServices.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to handle sliding to the left (for stationary section)
+  const slideLeftStationary = () => {
+    setCurrentIndexStationary((prevIndex) =>
+      prevIndex === 0 ? stationaryServices.length - 3 : prevIndex - 1
+    );
+  };
+
+  // Function to handle sliding to the right (for stationary section)
+  const slideRightStationary = () => {
+    setCurrentIndexStationary((prevIndex) =>
+      prevIndex === stationaryServices.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -25,86 +115,79 @@ function Home() {
           </div>
         </div>
 
-        {/* Featured Services */}
+        {/* Featured Services (Sliding Section) */}
         <div className="featured-services">
           <h2 className="featured-services-title">Featured Services</h2>
-          <div className="featured-services-list">
-            <div className="featured-service">
-              <img
-                src="https://cdn1.vectorstock.com/i/1000x1000/20/40/cleaning-service-concept-cheerful-cartoon-vector-25532040.jpg"
-                alt="Home Cleaning"
-                className="featured-service-icon"
-              />
-              <h3>Home Cleaning</h3>
-              <p>Professional home cleaning services to keep your house spotless.</p>
+          <div className="featured-services-wrapper">
+            {/* Left Slide Button */}
+            <button className="slide-button left" onClick={slideLeftSliding}>
+              &#10094;
+            </button>
+
+            {/* Featured Services List */}
+            <div className="featured-services-list">
+              {slidingServices
+                .slice(currentIndexSliding, currentIndexSliding + 3)
+                .map((service, index) => (
+                  <div className="featured-service" key={index}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="featured-service-icon"
+                    />
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                ))}
             </div>
-            <div className="featured-service">
-              <img
-                src="https://c8.alamy.com/compfr/fw3dnr/illustration-cartoon-jardinier-fw3dnr.jpg"
-                alt="Gardening"
-                className="featured-service-icon"
-              />
-              <h3>Gardening</h3>
-              <p>Expert gardening services to maintain your beautiful garden.</p>
-            </div>
-            <div className="featured-service">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/015/412/180/non_2x/painter-man-painting-house-wall-with-roller-brush-worker-guy-using-paint-roller-and-paint-cans-decorator-job-interior-renovation-service-flat-character-illustration-vector.jpg"
-                alt="Painting"
-                className="featured-service-icon"
-              />
-              <h3>Painting</h3>
-              <p>High-quality painting services for your home or office.</p>
-            </div>
+
+            {/* Right Slide Button */}
+            <button className="slide-button right" onClick={slideRightSliding}>
+              &#10095;
+            </button>
           </div>
         </div>
 
-        {/* Category Cards */}
-        <div className="category-cards">
-          <div className="category-card">
-            <img
-              src="https://thumbs.dreamstime.com/z/happy-plumber-16841982.jpg"
-              alt="Plumbing"
-              className="category-icon"
-            />
-            <p className="category-title">Plumbing</p>
-            <p className="category-description">
-              Reliable plumbing services to fix leaks, install fixtures, and maintain your water systems.
-            </p>
-          </div>
-          <div className="category-card">
-            <img
-              src="https://thumbs.dreamstime.com/z/engineer-man-working-breaker-fuse-box-electrician-electrical-service-panel-cabinet-electric-meter-switch-board-wiring-192362152.jpg?w=360"
-              alt="Electrician"
-              className="category-icon"
-            />
-            <p className="category-title">Electrician</p>
-            <p className="category-description">
-              Expert electrical services for wiring, repairs, and installations to keep your home safe and powered.
-            </p>
-          </div>
-          <div className="category-card">
-            <img
-              src="https://png.pngtree.com/png-vector/20230728/ourmid/pngtree-carpenter-clipart-work-in-hand-carpenter-cartoon-vector-png-image_6809448.png"
-              alt="Carpentry"
-              className="category-icon"
-            />
-            <p className="category-title">Carpentry</p>
-            <p className="category-description">
-              Skilled carpentry services for custom furniture, repairs, and home renovations.
-            </p>
-          </div>
-        </div> 
+        {/* Stationary Services (Sliding Section) */}
+        <div className="featured-services">
+          <h2 className="featured-services-title">More Services</h2>
+          <div className="featured-services-wrapper">
+            {/* Left Slide Button */}
+            <button className="slide-button left" onClick={slideLeftStationary}>
+              &#10094;
+            </button>
 
- {/* Call to Action */}
- <div className="call-to-action">
+            {/* Featured Services List */}
+            <div className="featured-services-list">
+              {stationaryServices
+                .slice(currentIndexStationary, currentIndexStationary + 3)
+                .map((service, index) => (
+                  <div className="featured-service" key={index}>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="featured-service-icon"
+                    />
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                ))}
+            </div>
+
+            {/* Right Slide Button */}
+            <button className="slide-button right" onClick={slideRightStationary}>
+              &#10095;
+            </button>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="call-to-action">
           <h2 className="call-to-action-title">Ready to Get Started?</h2>
           <Link to="/post-job" className="call-to-action-button">
             Post a Job Now
           </Link>
-
         </div>
-
 
         {/* Thin Line */}
         <div className="thin-line"></div>
@@ -132,7 +215,6 @@ function Home() {
             <p className="testimonial-author">- Jane Smith</p>
           </div>
         </div>
-
       </div>
       <Footer />
     </>

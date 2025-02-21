@@ -431,3 +431,190 @@ body {
  padding-top: 5px;  /* Moves it down */
   padding-bottom: 5px; /* Adds space below */
 }
+/* Featured Services Wrapper */
+.featured-services-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Slide Buttons */
+.slide-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slide-button.left {
+  left: -20px;
+}
+
+.slide-button.right {
+  right: -20px;
+}
+
+/* Featured Services List */
+.featured-services-list {
+  display: flex;
+  gap: 50px;
+  transition: transform 0.5s ease;
+}
+
+/* Featured Service */
+.featured-service {
+  width: 24%;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.featured-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f0f8ff;
+}/* Featured Services Wrapper */
+.featured-services-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Slide Buttons */
+.slide-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slide-button.left {
+  left: -60px; /* Adjust this value to position the left button */
+}
+
+.slide-button.right {
+  right: -60px; /* Adjust this value to position the right button */
+}/* Featured Services Wrapper */
+.featured-services-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Slide Buttons */
+.slide-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slide-button.left {
+  left: -60px; /* Adjust this value to position the left button */
+}
+
+.slide-button.right {
+  right: -60px; /* Adjust this value to position the right button */
+}
+
+/* Featured Services List */
+.featured-services-list {
+  display: flex;
+  gap: 50px;
+  transition: transform 0.5s ease;
+}
+
+/* Featured Service */
+.featured-service {
+  width: 300px; /* Fixed width */
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.featured-service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f0f8ff;
+}
+
+.featured-service-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.featured-service h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.25rem 0;
+}
+
+.featured-service p {
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+  margin: 0;
+}
