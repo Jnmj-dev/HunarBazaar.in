@@ -32,16 +32,13 @@ function Footer() {
           </ul>
         </div>
 
-
-        {/* Contact Info - Moved to Right Side */}
-    
-<div className="footer-section contact-section">
-<p>For queries contact : sample@gmail.com</p>
-</div>
-
+        {/* Contact Section */}
+        <div className="footer-section contact-section">
+          <h1><b>For queries contact: sample@gmail.com</b></h1>
+        </div>
       </div>
 
-      {/* Footer Bottom */} 
+      {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>© 2025 HunarBazaar. All Rights Reserved.</p>
       </div>

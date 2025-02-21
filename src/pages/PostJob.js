@@ -1,14 +1,72 @@
 import { useState } from "react";
-import { jobs } from "../data";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+// Initial jobs data with 3 new jobs added
+const initialJobs = [
+  {
+    id: 1,
+    title: "Electrician needed for wiring",
+    description: "Need an electrician to fix wiring issues in my home.",
+    budget: "₹1500",
+    location: "New Delhi",
+    postedBy: "Rahul Sharma",
+    date: "12 Feb 2025",
+  },
+  {
+    id: 2,
+    title: "Plumber needed for pipe repair",
+    description: "There's a leak in my bathroom pipes. Need a plumber urgently.",
+    budget: "₹1200",
+    location: "Mumbai",
+    postedBy: "Priya Singh",
+    date: "13 Feb 2025",
+  },
+  {
+    id: 3,
+    title: "Carpenter needed for furniture repair",
+    description: "My wooden chair is broken. Need a carpenter to fix it.",
+    budget: "₹1000",
+    location: "Bangalore",
+    postedBy: "Amit Patel",
+    date: "14 Feb 2025",
+  },
+  // New jobs
+  {
+    id: 4,
+    title: "Mechanic needed for bike repair",
+    description: "My bike’s engine is making strange noises. Need a mechanic to check and fix it.",
+    budget: "₹1800",
+    location: "Pune",
+    postedBy: "Rohan Deshmukh",
+    date: "16 Feb 2025",
+  },
+  {
+    id: 5,
+    title: "Mason needed for floor tiling",
+    description: "Need a mason to install new tiles in my kitchen. Looking for quality work.",
+    budget: "₹2500",
+    location: "Hyderabad",
+    postedBy: "Kavita Reddy",
+    date: "15 Feb 2025",
+  },
+  {
+    id: 6,
+    title: "Chef needed for small party",
+    description: "Hosting a family gathering. Need a chef to cook North Indian dishes for 10 people.",
+    budget: "₹3000",
+    location: "Jaipur",
+    postedBy: "Manish Gupta",
+    date: "14 Feb 2025",
+  },
+];
 
 function PostJob() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [budget, setBudget] = useState("");
   const [location, setLocation] = useState("");
-  const [postedJobs, setPostedJobs] = useState(jobs);
+  const [postedJobs, setPostedJobs] = useState(initialJobs);
 
   const handleSubmit = (e) => {
     e.preventDefault();

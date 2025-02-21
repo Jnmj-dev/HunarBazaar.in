@@ -29,6 +29,34 @@ const workers = [
     location: "Bangalore",
     rating: "4.6",
     image: "https://www.shutterstock.com/image-photo/young-plumber-looking-camera-while-260nw-2558371247.jpg",
+  },
+  // New workers
+  {
+    id: 4,
+    name: "Vikram Yadav",
+    profession: "Mason",
+    experience: "6 years",
+    location: "Jaipur",
+    rating: "4.5",
+    image: "https://renoquotes.com/_next/image?url=https%3A%2F%2Fsoumissionrenovation.ca%2Fsn_uploads%2Fblog%2Fimages%2FSoumissionRenovation_RenoQuotes_masonry_maconnerie_brick_brique_2.jpg&w=1200&q=75", // Mason image
+  },
+  {
+    id: 5,
+    name: "Sunita Nair",
+    profession: "Chef",
+    experience: "8 years",
+    location: "Chennai",
+    rating: "4.7",
+    image: "https://t3.ftcdn.net/jpg/05/01/41/62/360_F_501416296_bP1aRAl7ktvMZRHAuOtmOWdTcZraS0sP.jpg", // Chef image
+  },
+  {
+    id: 6,
+    name: "Arjun Patel",
+    profession: "Mechanic",
+    experience: "5 years",
+    location: "Pune",
+    rating: "4.6",
+    image: "https://www.shutterstock.com/image-photo/indian-happy-auto-mechanic-blue-260nw-2395865563.jpg", // Mechanic image
   }
 ];
 
@@ -39,11 +67,13 @@ function WorkerProfile() {
       <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh", padding: "40px 10px" }}>
         <h1 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "bold" }}>Worker Profiles</h1>
         <div style={{ 
-          display: "flex", 
-          justifyContent: "center", 
-          gap: "30px",  // 👈 VERY MINIMAL SPACE BETWEEN BOXES
+          display: "grid", 
+          gridTemplateColumns: "repeat(3, 1fr)", // 3 columns
+          gap: "30px", // Space between boxes
           marginTop: "20px",
-          flexWrap: "wrap"
+          justifyContent: "center",
+          maxWidth: "1200px", // Limit width for better alignment
+          margin: "0 auto" // Center the grid
         }}>
           {workers.map((worker) => (
             <Link 
@@ -61,8 +91,8 @@ function WorkerProfile() {
                 display: "flex", 
                 flexDirection: "column", 
                 alignItems: "center", 
-                width: "350px", // 👈 Updated width
-                height: "450px" 
+                width: "350px", // Box width
+                height: "450px" // Box height
               }}
             >
               <img 
@@ -73,7 +103,6 @@ function WorkerProfile() {
                   height: "250px", 
                   objectFit: "cover", 
                   borderRadius: "10px" 
-                 
                 }} 
               />
               <h2 style={{ fontSize: "1.5rem", fontWeight: "bold", marginTop: "10px" }}>{worker.name}</h2>

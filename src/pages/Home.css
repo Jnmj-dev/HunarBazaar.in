@@ -359,3 +359,75 @@ body {
   text-align: right; /* Align text to the right if needed */
   white-space: nowrap; /* Prevents text from wrapping */
 }
+/* Footer Contact Section */
+.contact-section {
+  flex: 1; /* Allow it to take up available space */
+  text-align: right; /* Align text to the right */
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin-left: auto; /* Push it to the right */
+  padding-left: 2rem; /* Add some spacing from the previous section */
+}
+
+.contact-section p {
+  font-size: 1rem; /* Match font size with other footer text */
+  color: #bdc3c7; /* Match footer link color */
+  margin: 0; /* Remove default margin */
+}
+
+/* Ensure footer sections are aligned properly */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-section {
+    text-align: center; /* Center text on smaller screens */
+    margin-left: 0; /* Reset margin */
+    padding-left: 0; /* Reset padding */
+  }
+}/* Footer Section Headings */
+.footer-section h2 {
+  margin-bottom: 1rem; /* Increase space below the heading */
+  font-size: 1.5rem; /* Optional: Increase heading size for better visibility */
+  color: #ffffff; /* Ensure heading color matches footer theme */
+}/* Footer Links List */
+.footer-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.footer-links li {
+  margin-bottom: 0; /* Remove space between list items */
+  line-height: 1.5; /* Adjust line height for better readability */
+}
+
+.footer-links a {
+  color: #bdc3c7; /* Match footer link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-links a:hover {
+  color: #1abc9c; /* Hover color */
+}
+.footer-section {
+ padding-top: 5px;  /* Moves it down */
+  padding-bottom: 5px; /* Adds space below */
+}

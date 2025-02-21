@@ -40,5 +40,6 @@
   "description": "HunarBazaar is a platform that connects skilled local workers—such as carpenters, masons, electricians, halwais, and more—with people who need their services. It functions like a freelancing marketplace but specifically caters to small-scale workers, helping them gain online visibility and secure jobs easily. The platform bridges the gap between skilled professionals and customers, offering an easy-to-use interface and seamless hiring process. By leveraging technology, HunarBazaar aims to modernize the local service sector and provide better income opportunities for workers.",
   "main": "postcss.config.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": []
 }
