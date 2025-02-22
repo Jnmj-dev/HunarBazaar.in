@@ -9,6 +9,7 @@ function PostJob() {
   const [budget, setBudget] = useState("");
   const [location, setLocation] = useState("");
   const [image, setImage] = useState(null);
+  const [mobile, setMobile] = useState(""); // New state variable for mobile number
   const [postedJobs, setPostedJobs] = useState([]);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ function PostJob() {
     formData.append("description", description);
     formData.append("budget", `₹${budget}`);
     formData.append("location", location);
+    formData.append("mobile", mobile); // Append mobile number to form data
     if (image) {
       formData.append("image", image);
     }
@@ -40,6 +42,7 @@ function PostJob() {
         setDescription("");
         setBudget("");
         setLocation("");
+        setMobile(""); // Reset mobile number
         setImage(null);
       })
       .catch((error) => console.error("Error posting job:", error));
@@ -113,6 +116,13 @@ function PostJob() {
               placeholder="Location"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Mobile Number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
               required
             />
             <input
