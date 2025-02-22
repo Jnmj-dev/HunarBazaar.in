@@ -68,30 +68,30 @@ function Home() {
 
   // Function to handle sliding to the left (for sliding section)
   const slideLeftSliding = () => {
-    setCurrentIndexSliding((prevIndex) =>
-      prevIndex === 0 ? slidingServices.length - 3 : prevIndex - 1
-    );
+    if (currentIndexSliding > 0) {
+      setCurrentIndexSliding((prevIndex) => prevIndex - 1);
+    }
   };
 
   // Function to handle sliding to the right (for sliding section)
   const slideRightSliding = () => {
-    setCurrentIndexSliding((prevIndex) =>
-      prevIndex === slidingServices.length - 3 ? 0 : prevIndex + 1
-    );
+    if (currentIndexSliding < slidingServices.length - 3) {
+      setCurrentIndexSliding((prevIndex) => prevIndex + 1);
+    }
   };
 
   // Function to handle sliding to the left (for stationary section)
   const slideLeftStationary = () => {
-    setCurrentIndexStationary((prevIndex) =>
-      prevIndex === 0 ? stationaryServices.length - 3 : prevIndex - 1
-    );
+    if (currentIndexStationary > 0) {
+      setCurrentIndexStationary((prevIndex) => prevIndex - 1);
+    }
   };
 
   // Function to handle sliding to the right (for stationary section)
   const slideRightStationary = () => {
-    setCurrentIndexStationary((prevIndex) =>
-      prevIndex === stationaryServices.length - 3 ? 0 : prevIndex + 1
-    );
+    if (currentIndexStationary < stationaryServices.length - 3) {
+      setCurrentIndexStationary((prevIndex) => prevIndex + 1);
+    }
   };
 
   return (
@@ -120,62 +120,84 @@ function Home() {
           <h2 className="featured-services-title">Featured Services</h2>
           <div className="featured-services-wrapper">
             {/* Left Slide Button */}
-            <button className="slide-button left" onClick={slideLeftSliding}>
+            <button
+              className={`slide-button left ${currentIndexSliding === 0 ? "disabled" : ""}`}
+              onClick={slideLeftSliding}
+              disabled={currentIndexSliding === 0}
+            >
               &#10094;
             </button>
 
             {/* Featured Services List */}
-            <div className="featured-services-list">
-              {slidingServices
-                .slice(currentIndexSliding, currentIndexSliding + 3)
-                .map((service, index) => (
-                  <div className="featured-service" key={index}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="featured-service-icon"
-                    />
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                ))}
+            <div
+              className="featured-services-list"
+              style={{
+                transform: `translateX(${-currentIndexSliding * (100 / 3)}%)`, // Adjust for 3 boxes at a time
+              }}
+            >
+              {slidingServices.map((service, index) => (
+                <div className="featured-service" key={index}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="featured-service-icon"
+                  />
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))}
             </div>
 
             {/* Right Slide Button */}
-            <button className="slide-button right" onClick={slideRightSliding}>
+            <button
+              className={`slide-button right ${currentIndexSliding >= slidingServices.length - 3 ? "disabled" : ""}`}
+              onClick={slideRightSliding}
+              disabled={currentIndexSliding >= slidingServices.length - 3}
+            >
               &#10095;
             </button>
           </div>
         </div>
 
-        {/* Stationary Services (Sliding Section) */}
+        {/* More Services (Stationary Section) */}
         <div className="featured-services">
           <h2 className="featured-services-title">More Services</h2>
           <div className="featured-services-wrapper">
             {/* Left Slide Button */}
-            <button className="slide-button left" onClick={slideLeftStationary}>
+            <button
+              className={`slide-button left ${currentIndexStationary === 0 ? "disabled" : ""}`}
+              onClick={slideLeftStationary}
+              disabled={currentIndexStationary === 0}
+            >
               &#10094;
             </button>
 
             {/* Featured Services List */}
-            <div className="featured-services-list">
-              {stationaryServices
-                .slice(currentIndexStationary, currentIndexStationary + 3)
-                .map((service, index) => (
-                  <div className="featured-service" key={index}>
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="featured-service-icon"
-                    />
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                ))}
+            <div
+              className="featured-services-list"
+              style={{
+                transform: `translateX(${-currentIndexStationary * (100 / 3)}%)`, // Adjust for 3 boxes at a time
+              }}
+            >
+              {stationaryServices.map((service, index) => (
+                <div className="featured-service" key={index}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="featured-service-icon"
+                  />
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))}
             </div>
 
             {/* Right Slide Button */}
-            <button className="slide-button right" onClick={slideRightStationary}>
+            <button
+              className={`slide-button right ${currentIndexStationary >= stationaryServices.length - 3 ? "disabled" : ""}`}
+              onClick={slideRightStationary}
+              disabled={currentIndexStationary >= stationaryServices.length - 3}
+            >
               &#10095;
             </button>
           </div>

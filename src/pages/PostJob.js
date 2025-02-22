@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// Initial jobs data with 3 new jobs added
+// Initial jobs data with 10 jobs (6 original + 4 new)
 const initialJobs = [
   {
     id: 1,
@@ -31,7 +31,6 @@ const initialJobs = [
     postedBy: "Amit Patel",
     date: "14 Feb 2025",
   },
-  // New jobs
   {
     id: 4,
     title: "Mechanic needed for bike repair",
@@ -59,6 +58,43 @@ const initialJobs = [
     postedBy: "Manish Gupta",
     date: "14 Feb 2025",
   },
+  // New jobs
+  {
+    id: 7,
+    title: "Painter needed for house walls",
+    description: "Looking for a painter to repaint my living room and bedroom.",
+    budget: "₹3500",
+    location: "Kolkata",
+    postedBy: "Sneha Banerjee",
+    date: "19 Feb 2025",
+  },
+  {
+    id: 8,
+    title: "Wedding photographer needed",
+    description: "Looking for a professional photographer to cover my wedding ceremony.",
+    budget: "₹15000",
+    location: "Bengaluru",
+    postedBy: "Vikram Shetty",
+    date: "20 Feb 2025",
+  },
+  {
+    id: 9,
+    title: "Tutor needed for math coaching",
+    description: "Need a tutor to help my son with class 10 math preparation.",
+    budget: "₹2500",
+    location: "Lucknow",
+    postedBy: "Neha Tiwari",
+    date: "21 Feb 2025",
+  },
+  {
+    id: 10,
+    title: "Tailor needed for dress stitching",
+    description: "Need a tailor to stitch a custom blouse and lehenga for a wedding function.",
+    budget: "₹3000",
+    location: "Chandigarh",
+    postedBy: "Simran Kaur",
+    date: "22 Feb 2025",
+  },
 ];
 
 function PostJob() {
@@ -79,7 +115,7 @@ function PostJob() {
       postedBy: "You",
       date: new Date().toLocaleDateString(),
     };
-    setPostedJobs([...postedJobs, newJob]);
+    setPostedJobs([...postedJobs, newJob]); // Update the state with the new job
     setTitle("");
     setDescription("");
     setBudget("");

@@ -34,7 +34,7 @@ function Footer() {
 
         {/* Contact Section */}
         <div className="footer-section contact-section">
-          <h1><b>For queries contact: sample@gmail.com</b></h1>
+          <h1>For queries contact: HunarBazaar@gmail.com</h1>
         </div>
       </div>
 
