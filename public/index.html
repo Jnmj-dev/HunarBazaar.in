@@ -5,56 +5,23 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
-    <!-- Add Tailwind CSS -->
+    <title>Hunar Bazaar</title>
+
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
     <style>
       /* Custom styles */
       body {
         @apply bg-gray-100;
       }
-
-      .navbar {
-        @apply bg-blue-600 p-4 shadow-md;
-      }
-
-      .navbar a {
-        @apply text-white hover:text-gray-200 transition duration-200;
-      }
-
-      .navbar a.bg-white {
-        @apply text-blue-600 px-4 py-2 rounded-lg;
-      }
-
-      .home-hero {
-        @apply relative w-full h-screen flex flex-col items-center justify-center text-center bg-cover bg-center;
-      }
-
-      .home-hero-title {
-        @apply text-5xl font-bold text-white;
-      }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <a href="#" class="hover:text-gray-200">Home</a>
-        <a href="#" class="hover:text-gray-200">About</a>
-        <a href="#" class="bg-white">Get Started</a>
-      </nav>
-
-      <!-- Hero Section -->
-      <div class="home-hero" style="background-image: url('your-background-image.jpg');">
-        <h1 class="home-hero-title">Find Skilled Workers Easily</h1>
-      </div>
-    </div>
+    <div id="root"></div> <!-- React will render everything inside this -->
   </body>
 </html>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './Navbar.css'; // Import the CSS file
+import './Navbar.css';
 
 function Navbar() {
   return (
@@ -17,7 +17,7 @@ function Navbar() {
         </div>
         <div className="navbar-auth">
           <Link to="/login" className="navbar-button login">Login</Link>
-          <Link to="/signup" className="navbar-button signup">Sign Up</Link>
+          <Link to="/signup" className="navbar-button signup">Sign Up</Link> {/* Now Functional */}
         </div>
       </div>
     </nav>
