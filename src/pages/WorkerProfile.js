@@ -38,7 +38,7 @@ const workers = [
     experience: "6 years",
     location: "Jaipur",
     rating: "4.5",
-    image: "https://renoquotes.com/_next/image?url=https%3A%2F%2Fsoumissionrenovation.ca%2Fsn_uploads%2Fblog%2Fimages%2FSoumissionRenovation_RenoQuotes_masonry_maconnerie_brick_brique_2.jpg&w=1200&q=75", // Mason image
+    image: "https://media.istockphoto.com/id/610442626/photo/master-mason.jpg?s=612x612&w=0&k=20&c=8JlF8evy9RJRSup-WM6_G1XJh0Hd3tWAPUoLYERyoqk=", // Mason image
   },
   {
     id: 5,
