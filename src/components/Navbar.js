@@ -16,8 +16,10 @@ function Navbar() {
           <Link to="/post-job" className="navbar-link">Post a Job</Link>
         </div>
         <div className="navbar-auth">
-          <Link to="/login" className="navbar-button login">Login</Link>
-          <Link to="/signup" className="navbar-button signup">Sign Up</Link> {/* Now Functional */}
+          {/* Single Login/Signup Button */}
+          <Link to="/signup" className="navbar-button login-signup">
+            Login/Signup
+          </Link>
         </div>
       </div>
     </nav>

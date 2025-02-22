@@ -107,4 +107,46 @@
 .navbar-button.login:hover,
 .navbar-button.signup:hover {
   background-color: rgba(0, 0, 255, 0.45);
+}/* Single Login/Signup Button Styling */
+.navbar-button.login-signup {
+  background-color: #b19cd9; /* Light Purple */
+  color: white; /* White text for contrast */
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the Login/Signup button */
+.navbar-button.login-signup:hover {
+  background-color: #9a7fb8; /* Slightly darker purple on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}/* Single Login/Signup Button Styling */
+.navbar-button.login-signup {
+  background-color: #b19cd9; /* Light Purple */
+  color: white; /* White text for contrast */
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the Login/Signup button */
+.navbar-button.login-signup:hover {
+  background-color: #9a7fb8; /* Slightly darker purple on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}/* Single Login/Signup Button Styling */
+.navbar-button.login-signup {
+  background-color: rgba(0, 0, 255, 0.25); /* Light Blue (same as original Login button) */
+  color: black; /* Black text for contrast */
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the Login/Signup button */
+.navbar-button.login-signup:hover {
+  background-color: rgba(0, 0, 255, 0.45); /* Slightly darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }

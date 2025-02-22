@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Login from "./Login";
+import Signup from "./Signup"; // Import the Signup component
 import { useState, useEffect } from "react";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/worker-profile" element={<h1>Workers</h1>} />
         <Route path="/post-job" element={<PostJob addJob={addJob} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> {/* Signup route */}
       </Routes>
     </Router>
   );

@@ -25,8 +25,8 @@ const Login = () => {
 
         <form onSubmit={handleLogin} className="flex flex-col">
           <input
-            type="email"
-            placeholder="Email"
+            type="text"
+            placeholder="Username or Email"
             className="mb-4 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
