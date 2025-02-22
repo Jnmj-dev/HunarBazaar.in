@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import "./PostJob.css"; // Import the CSS file
 
 function PostJob() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [budget, setBudget] = useState("");
   const [location, setLocation] = useState("");
+  const [image, setImage] = useState(null);
   const [postedJobs, setPostedJobs] = useState([]);
 
   useEffect(() => {
@@ -18,20 +20,18 @@ function PostJob() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newJob = {
-      title,
-      description,
-      budget: `₹${budget}`,
-      location,
-      postedBy: "You",
-    };
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("budget", `₹${budget}`);
+    formData.append("location", location);
+    if (image) {
+      formData.append("image", image);
+    }
 
     fetch("http://localhost:5000/api/jobs", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newJob),
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -40,6 +40,7 @@ function PostJob() {
         setDescription("");
         setBudget("");
         setLocation("");
+        setImage(null);
       })
       .catch((error) => console.error("Error posting job:", error));
   };
@@ -59,22 +60,22 @@ function PostJob() {
   return (
     <>
       <Navbar />
-      <div className="p-10">
+      <div className="post-job-container">
         {/* Display posted jobs first */}
         <div className="mt-2">
           <h2 className="text-2xl font-bold">Your Posted Jobs</h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-4">
+          <div className="grid">
             {postedJobs.map((job) => (
-              <div key={job.id} className="border p-4 rounded-lg shadow-lg">
-                <h2 className="text-xl font-bold">{job.title}</h2>
+              <div key={job.id} className="job-tile">
+                <h2>{job.title}</h2>
                 <p className="text-gray-600">{job.description}</p>
                 <p className="text-green-600 font-semibold">Budget: {job.budget}</p>
                 <p>📍 {job.location}</p>
                 <p>Posted by: {job.postedBy}</p>
                 <p>📅 {job.date}</p>
+                {job.image && <img src={`http://localhost:5000${job.image}`} alt={job.title} />}
                 <button
                   onClick={() => handleDelete(job.id)}
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg mt-2"
                 >
                   Delete
                 </button>
@@ -85,22 +86,20 @@ function PostJob() {
 
         {/* Post a Job form at the end */}
         <div className="mt-10">
-          <h1 className="text-3xl font-bold text-center">Post a Job</h1>
-          <form onSubmit={handleSubmit} className="max-w-lg mx-auto mt-6 space-y-4 border p-6 shadow-lg rounded-lg">
+          <h1 className="post-job-title">Post a Job</h1>
+          <form onSubmit={handleSubmit} className="post-job-form">
             <input
               type="text"
               placeholder="Job Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              className="w-full p-2 border rounded"
             />
             <textarea
               placeholder="Job Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
-              className="w-full p-2 border rounded"
             />
             <input
               type="number"
@@ -108,7 +107,6 @@ function PostJob() {
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
               required
-              className="w-full p-2 border rounded"
             />
             <input
               type="text"
@@ -116,9 +114,12 @@ function PostJob() {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               required
-              className="w-full p-2 border rounded"
             />
-            <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded-lg w-full">
+            <input
+              type="file"
+              onChange={(e) => setImage(e.target.files[0])}
+            />
+            <button type="submit">
               Post Job
             </button>
           </form>
