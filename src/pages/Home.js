@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -7,6 +7,165 @@ import "./Home.css";
 function Home() {
   const [currentIndexSliding, setCurrentIndexSliding] = useState(0);
   const [currentIndexStationary, setCurrentIndexStationary] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
+
+  // Array of all services
+  const allServices = [
+    "Electrician",
+    "Plumber",
+    "Carpenter",
+    "Mechanic",
+    "Mason",
+    "Painter",
+    "Driver",
+    "Cook",
+    "Nurse",
+    "Cleaner",
+    "Waiter",
+    "Security Guard",
+    "Delivery Driver",
+    "Housekeeper",
+    "Janitor",
+    "Gardener",
+    "Barber",
+    "Hairdresser",
+    "Laundry Worker",
+    "Construction Worker",
+    "Dishwasher",
+    "Factory Worker",
+    "Tailor",
+    "Porter",
+    "Butcher",
+    "Baker",
+    "Bus Driver",
+    "Garbage Collector",
+    "Street Sweeper",
+    "Parking Attendant",
+    "Paramedic",
+    "Hotel Housekeeper",
+    "Caregiver",
+    "Farm Worker",
+    "Fisherman",
+    "Car Washer",
+    "Call Center Agent",
+    "Mover",
+    "Handyman",
+    "Pest Control Worker",
+  ];
+
+  // Array of all locations
+  const allLocations = [
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Chennai",
+    "Kolkata",
+    "Pune",
+    "Jaipur",
+    "Ahmedabad",
+    "Surat",
+    "Lucknow",
+    "Kanpur",
+    "Nagpur",
+    "Indore",
+    "Thane",
+    "Bhopal",
+    "Visakhapatnam",
+    "Patna",
+    "Vadodara",
+    "Ludhiana",
+    "Agra",
+    "Nashik",
+    "Meerut",
+    "Rajkot",
+    "Varanasi",
+    "Srinagar",
+    "Aurangabad",
+    "Dhanbad",
+    "Amritsar",
+    "Allahabad",
+    "Gwalior",
+    "Ranchi",
+    "Jabalpur",
+    "Coimbatore",
+    "Vijayawada",
+    "Madurai",
+    "Guwahati",
+    "Chandigarh",
+    "Hubballi-Dharwad",
+    "Thiruvananthapuram",
+    "Jodhpur",
+  ];
+
+  // Filter services based on search query
+  const filteredServices = allServices.filter((service) =>
+    service.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Filter locations based on search query
+  const filteredLocations = allLocations.filter((location) =>
+    location.toLowerCase().includes(locationQuery.toLowerCase())
+  );
+
+  // Handle service search input change
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setIsDropdownOpen(true);
+  };
+
+  // Handle location search input change
+  const handleLocationChange = (e) => {
+    setLocationQuery(e.target.value);
+    setIsLocationDropdownOpen(true);
+  };
+
+  // Handle selecting a service from the dropdown
+  const handleServiceSelect = (service) => {
+    setSelectedService(service);
+    setSearchQuery(service);
+    setIsDropdownOpen(false);
+  };
+
+  // Handle selecting a location from the dropdown
+  const handleLocationSelect = (location) => {
+    setSelectedLocation(location);
+    setLocationQuery(location);
+    setIsLocationDropdownOpen(false);
+  };
+
+  // Handle clearing the selected service
+  const clearSelectedService = () => {
+    setSelectedService("");
+    setSearchQuery("");
+  };
+
+  // Handle clearing the selected location
+  const clearSelectedLocation = () => {
+    setSelectedLocation("");
+    setLocationQuery("");
+  };
+
+  // Handle clicking outside the dropdown to close it
+  const handleClickOutside = (e) => {
+    if (!e.target.closest(".home-search-bar")) {
+      setIsDropdownOpen(false);
+    }
+    if (!e.target.closest(".location-search-bar")) {
+      setIsLocationDropdownOpen(false);
+    }
+  };
+
+  // Attach click outside listener
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Array of featured services for the sliding section
   const slidingServices = [
@@ -105,13 +264,66 @@ function Home() {
 
         {/* Search Bars */}
         <div className="search-bars-container">
+          {/* Service Search Bar */}
           <div className="home-search-bar">
-            <input type="text" placeholder="Search for services..." />
+            <input
+              type="text"
+              placeholder="Search for services..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onFocus={() => setIsDropdownOpen(true)}
+            />
+            {selectedService && (
+              <button className="clear-button" onClick={clearSelectedService}>
+                ✕
+              </button>
+            )}
             <div className="search-icon">🔍</div>
+            {/* Dropdown Menu for Services */}
+            {isDropdownOpen && (
+              <div className="services-dropdown">
+                {filteredServices.map((service, index) => (
+                  <div
+                    key={index}
+                    className="dropdown-item"
+                    onClick={() => handleServiceSelect(service)}
+                  >
+                    {service}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
+
+          {/* Location Search Bar */}
           <div className="home-search-bar location-search-bar">
-            <input type="text" placeholder="Choose your location" />
+            <input
+              type="text"
+              placeholder="Choose your location"
+              value={locationQuery}
+              onChange={handleLocationChange}
+              onFocus={() => setIsLocationDropdownOpen(true)}
+            />
+            {selectedLocation && (
+              <button className="clear-button" onClick={clearSelectedLocation}>
+                ✕
+              </button>
+            )}
             <div className="search-icon">📍</div>
+            {/* Dropdown Menu for Locations */}
+            {isLocationDropdownOpen && (
+              <div className="services-dropdown">
+                {filteredLocations.map((location, index) => (
+                  <div
+                    key={index}
+                    className="dropdown-item"
+                    onClick={() => handleLocationSelect(location)}
+                  >
+                    {location}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -132,7 +344,7 @@ function Home() {
             <div
               className="featured-services-list"
               style={{
-                transform: `translateX(${-currentIndexSliding * (100 / 3)}%)`, // Adjust for 3 boxes at a time
+                transform: `translateX(${-currentIndexSliding * (100 / 3)}%)`,
               }}
             >
               {slidingServices.map((service, index) => (
@@ -176,7 +388,7 @@ function Home() {
             <div
               className="featured-services-list"
               style={{
-                transform: `translateX(${-currentIndexStationary * (100 / 3)}%)`, // Adjust for 3 boxes at a time
+                transform: `translateX(${-currentIndexStationary * (100 / 3)}%)`,
               }}
             >
               {stationaryServices.map((service, index) => (
