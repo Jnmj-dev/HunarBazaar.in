@@ -40,6 +40,44 @@ HunarBazaar is a platform that connects skilled local workers—such as carpente
    npm start
    ```
 
+   🚀 Key Features of HunarBazaar
+🔍 Local Service Provider Search:
+
+Users can search for businesses, services, and professionals by name, category, or location.
+Provides results based on user preferences, proximity, and ratings.
+✅ Verified Service Listings:
+
+Displays contact details, addresses, working hours, and service descriptions.
+Some listings have verified badges to ensure authenticity.
+⭐ User Reviews & Ratings:
+
+Customers can rate and review service providers based on their experiences.
+Helps other users make informed decisions.
+📅 Online Booking & Appointments:
+
+Users can book services like electricians, plumbers, and carpenters directly from the platform.
+📞 Call & SMS Connect:
+
+HunarBazaar enables direct calls or SMS to service providers from the website.
+Some services offer "HunarBazaar Verified" numbers for privacy and security.
+💳 HB Pay – Online Payments:
+
+Integrated payment gateway for secure transactions.
+Supports multiple payment modes, including UPI, debit/credit cards, and net banking.
+💰 Request Quotes & Price Comparisons:
+
+Users can request quotes from multiple service providers and compare prices.
+Useful for hiring professionals for home repairs, installations, and more.
+🗺 Maps & Directions:
+
+Integrated with Google Maps to help users locate service providers easily.
+🗣 HunarBazaar Social & Community Features:
+
+Users can ask questions, post recommendations, and interact with other community members.
+☎ 24/7 Customer Support:
+
+Provides assistance to users for service inquiries and issue resolution.
+
 ## 🚧 Roadmap
 ### Phase 1: Initial Development
 - [ ] Design and develop the UI with React.js.
