@@ -7,6 +7,76 @@ import "./Home.css";
 function Home() {
   const [currentIndexSliding, setCurrentIndexSliding] = useState(0);
   const [currentIndexStationary, setCurrentIndexStationary] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Array of all services
+  const allServices = [
+    "Electrician",
+    "Plumber",
+    "Carpenter",
+    "Mechanic",
+    "Mason",
+    "Painter",
+    "Driver",
+    "Cook",
+    "Nurse",
+    "Cleaner",
+    "Waiter",
+    "Security Guard",
+    "Delivery Driver",
+    "Housekeeper",
+    "Janitor",
+    "Gardener",
+    "Barber",
+    "Hairdresser",
+    "Laundry Worker",
+    "Construction Worker",
+    "Dishwasher",
+    "Factory Worker",
+    "Tailor",
+    "Porter",
+    "Butcher",
+    "Baker",
+    "Bus Driver",
+    "Garbage Collector",
+    "Street Sweeper",
+    "Parking Attendant",
+    "Paramedic",
+    "Hotel Housekeeper",
+    "Caregiver",
+    "Farm Worker",
+    "Fisherman",
+    "Car Washer",
+    "Call Center Agent",
+    "Mover",
+    "Handyman",
+    "Pest Control Worker",
+  ];
+
+  // Filter services based on search query
+  const filteredServices = allServices.filter((service) =>
+    service.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+    setIsDropdownOpen(true); // Open dropdown when typing
+  };
+
+  // Handle clicking outside the dropdown to close it
+  const handleClickOutside = (e) => {
+    if (!e.target.closest(".home-search-bar")) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  // Attach click outside listener
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Array of featured services for the sliding section
   const slidingServices = [
@@ -106,8 +176,24 @@ function Home() {
         {/* Search Bars */}
         <div className="search-bars-container">
           <div className="home-search-bar">
-            <input type="text" placeholder="Search for services..." />
+            <input
+              type="text"
+              placeholder="Search for services..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onFocus={() => setIsDropdownOpen(true)}
+            />
             <div className="search-icon">🔍</div>
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+              <div className="services-dropdown">
+                {filteredServices.map((service, index) => (
+                  <div key={index} className="dropdown-item">
+                    {service}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="home-search-bar location-search-bar">
             <input type="text" placeholder="Choose your location" />
