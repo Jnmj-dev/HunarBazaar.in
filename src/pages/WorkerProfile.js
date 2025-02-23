@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,6 +12,7 @@ const workers = [
     location: "New Delhi",
     rating: "4.7",
     image: "https://st2.depositphotos.com/1005682/12186/i/950/depositphotos_121864734-stock-photo-indian-male-electrician.jpg",
+    reviews: [],
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ const workers = [
     location: "Mumbai",
     rating: "4.8",
     image: "https://www.shutterstock.com/shutterstock/videos/1103946177/thumb/1.jpg?ip=x480",
+    reviews: [],
   },
   {
     id: 3,
@@ -29,8 +32,8 @@ const workers = [
     location: "Bangalore",
     rating: "4.6",
     image: "https://www.shutterstock.com/image-photo/young-plumber-looking-camera-while-260nw-2558371247.jpg",
+    reviews: [],
   },
-  // New workers
   {
     id: 4,
     name: "Vikram Yadav",
@@ -38,7 +41,8 @@ const workers = [
     experience: "6 years",
     location: "Jaipur",
     rating: "4.5",
-    image: "https://media.istockphoto.com/id/610442626/photo/master-mason.jpg?s=612x612&w=0&k=20&c=8JlF8evy9RJRSup-WM6_G1XJh0Hd3tWAPUoLYERyoqk=", // Mason image
+    image: "https://media.istockphoto.com/id/610442626/photo/master-mason.jpg?s=612x612&w=0&k=20&c=8JlF8evy9RJRSup-WM6_G1XJh0Hd3tWAPUoLYERyoqk=",
+    reviews: [],
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const workers = [
     experience: "8 years",
     location: "Chennai",
     rating: "4.7",
-    image: "https://t3.ftcdn.net/jpg/05/01/41/62/360_F_501416296_bP1aRAl7ktvMZRHAuOtmOWdTcZraS0sP.jpg", // Chef image
+    image: "https://t3.ftcdn.net/jpg/05/01/41/62/360_F_501416296_bP1aRAl7ktvMZRHAuOtmOWdTcZraS0sP.jpg",
+    reviews: [],
   },
   {
     id: 6,
@@ -56,11 +61,24 @@ const workers = [
     experience: "5 years",
     location: "Pune",
     rating: "4.6",
-    image: "https://www.shutterstock.com/image-photo/indian-happy-auto-mechanic-blue-260nw-2395865563.jpg", // Mechanic image
-  }
+    image: "https://www.shutterstock.com/image-photo/indian-happy-auto-mechanic-blue-260nw-2395865563.jpg",
+    reviews: [],
+  },
 ];
 
 function WorkerProfile() {
+  const [workersData, setWorkersData] = useState(workers);
+
+  // Function to add a review to a worker
+  const addReview = (workerId, newReview) => {
+    const updatedWorkers = workersData.map((worker) =>
+      worker.id === workerId
+        ? { ...worker, reviews: [...worker.reviews, newReview] }
+        : worker
+    );
+    setWorkersData(updatedWorkers);
+  };
+
   return (
     <>
       <Navbar />
@@ -75,9 +93,8 @@ function WorkerProfile() {
           maxWidth: "1200px", // Limit width for better alignment
           margin: "0 auto" // Center the grid
         }}>
-          {workers.map((worker) => (
-            <Link 
-              to={`/worker/${worker.id}`} 
+          {workersData.map((worker) => (
+            <div 
               key={worker.id} 
               style={{ 
                 border: "2px solid #ccc", 
@@ -92,7 +109,7 @@ function WorkerProfile() {
                 flexDirection: "column", 
                 alignItems: "center", 
                 width: "350px", // Box width
-                height: "450px" // Box height
+                height: "auto" // Box height
               }}
             >
               <img 
@@ -110,12 +127,102 @@ function WorkerProfile() {
               <p>Experience: {worker.experience}</p>
               <p>Location: {worker.location}</p>
               <p>⭐ {worker.rating}</p>
-            </Link>
+
+              {/* Display Reviews */}
+              <div style={{ marginTop: "20px", width: "100%" }}>
+                <h3 style={{ fontSize: "1.2rem", fontWeight: "bold" }}>Reviews</h3>
+                {worker.reviews.length > 0 ? (
+                  worker.reviews.map((review, index) => (
+                    <div key={index} style={{ marginTop: "10px", textAlign: "left" }}>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                        <span style={{ color: "gold" }}>{"★".repeat(review.rating)}</span>
+                        <span style={{ color: "gray", marginLeft: "5px" }}>{review.rating}/5</span>
+                      </div>
+                      <p style={{ color: "gray" }}>{review.comment}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p style={{ color: "gray" }}>No reviews yet.</p>
+                )}
+              </div>
+
+              {/* Add Review Form */}
+              <ReviewForm
+                workerId={worker.id}
+                onAddReview={addReview}
+              />
+            </div>
           ))}
         </div>
       </div>
       <Footer />
     </>
+  );
+}
+
+// ReviewForm Component
+function ReviewForm({ workerId, onAddReview }) {
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (rating === 0 || !comment.trim()) {
+      alert("Please provide a rating and a comment.");
+      return;
+    }
+
+    const newReview = {
+      rating,
+      comment,
+    };
+
+    onAddReview(workerId, newReview);
+    setRating(0);
+    setComment("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} style={{ marginTop: "20px", width: "100%" }}>
+      <h3 style={{ fontSize: "1.2rem", fontWeight: "bold" }}>Leave a Review</h3>
+      <div style={{ marginBottom: "10px" }}>
+        <label style={{ display: "block", marginBottom: "5px" }}>Rating:</label>
+        <select
+          value={rating}
+          onChange={(e) => setRating(Number(e.target.value))}
+          style={{ width: "100%", padding: "5px", borderRadius: "5px", border: "1px solid #ccc" }}
+        >
+          <option value={0}>Select a rating</option>
+          <option value={1}>1 Star</option>
+          <option value={2}>2 Stars</option>
+          <option value={3}>3 Stars</option>
+          <option value={4}>4 Stars</option>
+          <option value={5}>5 Stars</option>
+        </select>
+      </div>
+      <div style={{ marginBottom: "10px" }}>
+        <label style={{ display: "block", marginBottom: "5px" }}>Comment:</label>
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          style={{ width: "100%", padding: "5px", borderRadius: "5px", border: "1px solid #ccc" }}
+          placeholder="Write your review..."
+        />
+      </div>
+      <button
+        type="submit"
+        style={{
+          backgroundColor: "#4CAF50",
+          color: "white",
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Submit Review
+      </button>
+    </form>
   );
 }
 
