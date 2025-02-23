@@ -23,7 +23,7 @@ function SingleWorker() {
         <p>⭐ {worker.rating}</p>
         <Link to="/worker-profile" className="block mt-4 text-blue-500">⬅ Back to Workers</Link>
       </div>
-      <Footer />
+      
     </>
   );
 }

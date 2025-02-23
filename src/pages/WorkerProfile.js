@@ -155,7 +155,7 @@ function WorkerProfile() {
           ))}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

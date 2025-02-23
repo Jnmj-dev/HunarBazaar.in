@@ -100,7 +100,7 @@ function Marketplace() {
           ))}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }
