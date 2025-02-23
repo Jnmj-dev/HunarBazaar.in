@@ -35,6 +35,10 @@ HunarBazaar is a platform that connects skilled local workers—such as carpente
 
 ---
 
+DEMO LINK - https://youtu.be/u_LWJGjoa5o
+
+---
+
 ## 🛠 Tech Stack
 - **Frontend:** React.js  
 - **Backend:** Node.js  
