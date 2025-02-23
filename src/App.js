@@ -1,7 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import Login from "./Login";
-import Signup from "./Signup"; // Import the Signup component
+import Navbar from "./components/Navbar"; // Import Navbar component
+import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import WorkerProfile from "./pages/WorkerProfile";
+import PostJob from "./pages/PostJob";
+import SingleWorker from "./pages/SingleWorker";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup"; // Ensure Signup is imported correctly
 import { useState, useEffect } from "react";
 
 function App() {
@@ -22,46 +27,17 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar /> {/* Include Navbar at the top */}
       <Routes>
-        <Route path="/" element={<h1>Home Page</h1>} />
-        <Route path="/marketplace" element={<h1>Marketplace</h1>} />
-        <Route path="/worker-profile" element={<h1>Workers</h1>} />
-        <Route path="/post-job" element={<PostJob addJob={addJob} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} /> {/* Signup route */}
+        <Route path="/" element={<Home />} /> {/* Home Route */}
+        <Route path="/worker/:id" element={<SingleWorker />} /> {/* SingleWorker Route */}
+        <Route path="/marketplace" element={<Marketplace />} /> {/* Marketplace Route */}
+        <Route path="/worker-profile" element={<WorkerProfile />} /> {/* WorkerProfile Route */}
+        <Route path="/post-job" element={<PostJob addJob={addJob} />} /> {/* PostJob Route */}
+        <Route path="/login" element={<Login />} /> {/* Login Route */}
+        <Route path="/signup" element={<Signup />} /> {/* Signup Route */}
       </Routes>
     </Router>
-  );
-}
-
-function PostJob({ addJob }) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addJob({ title, description });
-    setTitle("");
-    setDescription("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <h1>Post a Job</h1>
-      <input
-        type="text"
-        placeholder="Job Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        placeholder="Job Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button type="submit">Post Job</button>
-    </form>
   );
 }
 
